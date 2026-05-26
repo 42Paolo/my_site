@@ -100,7 +100,7 @@ export default function Hero() {
 	const cueOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
 
 	const scrollDown = () => {
-		if (lenis) lenis.scrollTo("#chi-sono", { lerp: 0.08, duration: 1.6 });
+		if (lenis && window.innerWidth >= 1024) lenis.scrollTo("#chi-sono", { lerp: 0.08, duration: 1.6 });
 		else document.querySelector("#chi-sono")?.scrollIntoView({ behavior: "smooth" });
 	};
 

@@ -18,7 +18,7 @@ export default function Process() {
 
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (lenis) lenis.scrollTo("#contatto", { lerp: 0.08, duration: 1.4 });
+    if (lenis && window.innerWidth >= 1024) lenis.scrollTo("#contatto", { lerp: 0.08, duration: 1.4 });
     else document.querySelector("#contatto")?.scrollIntoView({ behavior: "smooth" });
   };
 

@@ -42,7 +42,7 @@ export default function Navbar() {
 
 	const handleNavClick = (href: string) => {
 		setMobileOpen(false);
-		if (lenis) {
+		if (lenis && window.innerWidth >= 1024) {
 			lenis.scrollTo(href, { lerp: 0.08, duration: 1.4 });
 		} else {
 			document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
