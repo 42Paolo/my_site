@@ -42,30 +42,30 @@
 	},
 	"services": {
 		"badge": "What I do",
-		"title": "Tailored",
-		"titleAccent": "services",
-		"subtitle": "Every project is unique. Here's how I can help you grow online.",
+		"title": "How will they",
+		"titleAccent": "find you?",
+		"subtitle": "Four areas of intervention, calibrated on the real context of each business. From brand design to technical infrastructure, every service is built on the concrete needs of your sector.",
 		"learnMore": "Learn more",
 		"items": [
 			{
 				"icon": "Palette",
-				"title": "Web Design",
-				"description": "Modern and professional designs that reflect your brand identity and capture visitor attention from the very first glance."
+				"title": "Design",
+				"description": "Interfaces designed around your brand positioning, not generic trends. Typography, visual hierarchy and details built to communicate value at first glance."
 			},
 			{
 				"icon": "Zap",
-				"title": "Web Development",
-				"description": "Fast, secure, and scalable websites built with modern technologies for an optimal user experience on every device."
+				"title": "Development",
+				"description": "Sites built with modern frameworks and hand-written code. Real performance, simple maintenance, reliable infrastructure that won't leave you stuck six months down the line."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "Search engine optimization and loading speed improvements to be found by your customers and increase traffic."
+				"description": "Technical optimisation for search engines and real users. Semantic structure, Core Web Vitals in the green, content calibrated to your sector's actual searches."
 			},
 			{
-				"icon": "ShoppingCart",
-				"title": "E-commerce",
-				"description": "Professional online stores that convert visitors into customers, with secure payments and easy, intuitive management."
+				"icon": "MapPin",
+				"title": "Google & Local",
+				"description": "Optimised Google Business Profile, visibility on Maps and local search. For professionals and SMEs operating on the ground: being found exactly where and when the client is looking."
 			}
 		]
 	},
