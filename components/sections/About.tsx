@@ -378,7 +378,7 @@ export default function About() {
 						animate={inView ? { opacity: 1, x: 0 } : {}}
 						transition={{ duration: 0.5 }}
 						className="font-display font-500 text-xs tracking-[0.22em] uppercase
-						           text-[var(--text-3)] flex items-center gap-3 mb-4 lg:mb-16"
+						           text-[var(--text-3)] flex items-center justify-center lg:justify-start gap-3 mb-4 lg:mb-16"
 					>
 						<span className="w-6 h-px bg-current" />
 						{t.about.badge}
@@ -387,7 +387,7 @@ export default function About() {
 					<div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-3 lg:gap-24 items-start">
 
 						{/* ── Left — stats ── */}
-						<div className="flex flex-col gap-0">
+						<div className="flex flex-col gap-0 items-center lg:items-start">
 							{STATS.map((stat, i) => {
 								const labels = [t.about.yearsLabel, t.about.projectsLabel, t.about.clientsLabel];
 								return (
@@ -433,7 +433,7 @@ export default function About() {
 						</div>
 
 						{/* ── Right — text ── */}
-						<div className="lg:pt-4">
+						<div className="lg:pt-4 text-center lg:text-left">
 							<motion.h2
 								initial={{ opacity: 0, x: 80 }}
 								animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -544,7 +544,7 @@ export default function About() {
 							{isMobile && !textExpanded && (
 								<button
 									onClick={() => setTextExpanded(true)}
-									className="flex items-center gap-2 mb-4 font-display font-600 text-xs
+									className="flex items-center gap-2 mb-4 mx-auto font-display font-600 text-xs
 									           tracking-[0.2em] text-[var(--text-3)] hover:text-[var(--text-2)]
 									           transition-colors"
 								>
@@ -558,6 +558,7 @@ export default function About() {
 								initial={{ opacity: 0, x: 50 }}
 								animate={inView ? { opacity: 1, x: 0 } : {}}
 								transition={{ duration: 0.7, delay: 0.36, ease: [0.16, 1, 0.3, 1] }}
+								className="flex justify-center lg:justify-start"
 							>
 								<motion.a
 									href="#portfolio"
