@@ -201,7 +201,7 @@ export default function Process() {
                 className="font-display font-700 leading-[0.92] tracking-[-0.04em] text-[var(--text)]"
                 style={{ fontSize: "clamp(2.4rem, 6vw, 6.5rem)" }}
               >
-                {t.hero.ctaSecondary}
+                {t.hero.ctaSecondary.split(" ").slice(0, -1).join(" ")}
                 <br />
                 <span
                   className="italic"
