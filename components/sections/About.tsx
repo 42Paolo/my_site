@@ -370,7 +370,7 @@ export default function About() {
 
 				</div>
 
-				<div className="relative z-10 flex flex-col lg:justify-center h-full">
+				<div className="relative z-10 flex flex-col justify-between lg:justify-center h-full">
 				<div ref={ref} className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 py-2 lg:py-16 w-full">
 					{/* ── Badge ── */}
 					<motion.p
@@ -399,7 +399,7 @@ export default function About() {
 										className={`w-full py-2 lg:py-8 ${i < 2 ? "border-b border-[var(--border)]" : ""}`}
 									>
 										{/* Mobile: numero e label in riga */}
-										<div className="flex lg:hidden gap-3" style={{ alignItems: "center" }}>
+										<div className="flex lg:hidden items-center gap-3">
 											<span
 												className="font-700 shrink-0"
 												style={{
@@ -418,12 +418,11 @@ export default function About() {
 												{getStatDisplay(stat)}
 											</span>
 											<span
-												className="font-body text-sm uppercase tracking-[0.14em] leading-tight self-center"
+												className="font-body text-sm uppercase tracking-[0.14em] leading-tight"
 												style={{
 													color: "var(--text-3)",
 													opacity: phase === "hacked" ? 0 : 1,
 													transition: "opacity 0.15s",
-													alignSelf: "center",
 												}}
 											>
 												{labels[i]}
@@ -545,45 +544,27 @@ export default function About() {
 								</span>
 							</motion.h2>
 
-							<motion.p
-								initial={{ opacity: 0, x: 60 }}
-								animate={inView ? { opacity: 1, x: 0 } : {}}
-								transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-								className="font-body font-light leading-relaxed text-sm lg:text-lg mb-2 lg:mb-5"
-								style={{ color: "#E2E8F0" }}
-							>
-								{t.about.description}
-							</motion.p>
-
-							{/* Second paragraph — always on desktop, expand on mobile */}
-							<AnimatePresence>
-								{(!isMobile || textExpanded) && (
-									<motion.p
-										key="desc2"
-										initial={isMobile ? { opacity: 0, height: 0, marginBottom: 0 } : { opacity: 0, x: 60 }}
-										animate={isMobile ? { opacity: 1, height: "auto", marginBottom: 16 } : inView ? { opacity: 1, x: 0 } : {}}
-										exit={isMobile ? { opacity: 0, height: 0, marginBottom: 0 } : {}}
-										transition={isMobile ? { duration: 0.35, ease: [0.16, 1, 0.3, 1] } : { duration: 0.7, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-										className="font-body font-light leading-relaxed text-sm lg:text-lg lg:mb-12 overflow-hidden"
-										style={{ color: "#E2E8F0" }}
-									>
-										{t.about.description2}
-									</motion.p>
-								)}
-							</AnimatePresence>
-
-							{/* Expand button — mobile only */}
-							{isMobile && !textExpanded && (
-								<button
-									onClick={() => setTextExpanded(true)}
-									className="flex items-center gap-2 mb-4 mx-auto font-display font-600 text-xs
-									           tracking-[0.2em] text-[var(--text-3)] hover:text-[var(--text-2)]
-									           transition-colors"
+							{/* Descriptions — desktop only; mobile version is a separate flex block */}
+							<div className="hidden lg:block">
+								<motion.p
+									initial={{ opacity: 0, x: 60 }}
+									animate={inView ? { opacity: 1, x: 0 } : {}}
+									transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+									className="font-body font-light leading-relaxed lg:text-lg mb-2 lg:mb-5"
+									style={{ color: "#E2E8F0" }}
 								>
-									<span className="text-base leading-none tracking-[0.3em]">···</span>
-									<span>leggi di più</span>
-								</button>
-							)}
+									{t.about.description}
+								</motion.p>
+								<motion.p
+									initial={{ opacity: 0, x: 60 }}
+									animate={inView ? { opacity: 1, x: 0 } : {}}
+									transition={{ duration: 0.7, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
+									className="font-body font-light leading-relaxed lg:text-lg lg:mb-12"
+									style={{ color: "#E2E8F0" }}
+								>
+									{t.about.description2}
+								</motion.p>
+							</div>
 
 							{/* ── Cyberpunk CTA — desktop only ── */}
 							<motion.div
@@ -663,12 +644,45 @@ export default function About() {
 					</div>
 				</div>
 
-				{/* ── Cyberpunk CTA — mobile, centered in remaining space ── */}
+				{/* ── Mobile description — flex item centered by justify-between ── */}
+				<div className="lg:hidden max-w-7xl mx-auto px-5 w-full text-center">
+					<p className="font-body font-light leading-relaxed text-sm mb-2" style={{ color: "#E2E8F0" }}>
+						{t.about.description}
+					</p>
+					<AnimatePresence>
+						{textExpanded && (
+							<motion.p
+								key="desc2-mobile"
+								initial={{ opacity: 0, height: 0, marginBottom: 0 }}
+								animate={{ opacity: 1, height: "auto", marginBottom: 12 }}
+								exit={{ opacity: 0, height: 0, marginBottom: 0 }}
+								transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+								className="font-body font-light leading-relaxed text-sm overflow-hidden"
+								style={{ color: "#E2E8F0" }}
+							>
+								{t.about.description2}
+							</motion.p>
+						)}
+					</AnimatePresence>
+					{!textExpanded && (
+						<button
+							onClick={() => setTextExpanded(true)}
+							className="flex items-center gap-2 mt-1 mx-auto font-display font-600 text-xs
+							           tracking-[0.2em] text-[var(--text-3)] hover:text-[var(--text-2)]
+							           transition-colors"
+						>
+							<span className="text-base leading-none tracking-[0.3em]">···</span>
+							<span>leggi di più</span>
+						</button>
+					)}
+				</div>
+
+				{/* ── Cyberpunk CTA — mobile, at bottom via justify-between ── */}
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={inView ? { opacity: 1 } : {}}
 					transition={{ duration: 0.7, delay: 0.5 }}
-					className="lg:hidden flex-1 flex items-center justify-center pb-4"
+					className="lg:hidden flex items-center justify-center pb-8"
 				>
 					<motion.a
 						href="#portfolio"

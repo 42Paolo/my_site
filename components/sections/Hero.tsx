@@ -1,6 +1,9 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect } from "react";
+
+// Runs before first paint on client, falls back to useEffect on server (SSR)
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 import { motion, useScroll, useTransform, useMotionValueEvent, useReducedMotion } from "framer-motion";
 import { useLang } from "@/context/LanguageContext";
 import { useLenis } from "lenis/react";
@@ -66,7 +69,7 @@ export default function Hero() {
 	const [isMobile, setIsMobile] = useState(false);
 	const [mobileVH, setMobileVH] = useState<number | null>(null);
 
-	useEffect(() => {
+	useIsomorphicLayoutEffect(() => {
 		const mobile = window.innerWidth < 1024;
 		isMobileRef.current = mobile;
 		setIsMobile(mobile);
@@ -214,7 +217,7 @@ export default function Hero() {
 					<div className="max-w-[1440px] mx-auto w-full px-6 md:px-12 lg:px-16 pt-20 pb-8">
 
 						<motion.p
-							initial={{ opacity: 0, x: -16 }}
+							initial={isMobile ? false : { opacity: 0, x: -16 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.5, delay: 0.05 }}
 							className="flex items-center gap-3 font-display font-500 text-xs
@@ -232,7 +235,7 @@ export default function Hero() {
 							{lines.map((line, i) => (
 								<div key={i} className="pb-[0.06em]">
 									<motion.div
-										initial={{ opacity: 0, y: 32 }}
+										initial={isMobile ? false : { opacity: 0, y: 32 }}
 										animate={{ opacity: 1, y: 0 }}
 										transition={(prefersReduced || isMobile)
 											? { duration: 0 }
@@ -263,7 +266,7 @@ export default function Hero() {
 						</div>
 
 						<motion.div
-							initial={{ opacity: 0, y: 28 }}
+							initial={isMobile ? false : { opacity: 0, y: 28 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.7, delay: 0.62 }}
 						>

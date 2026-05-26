@@ -26,8 +26,8 @@
 		"badge": "Chi sono",
 		"title": "Sono Paolo,",
 		"titleAccent": "esiste solo ciò che si può cercare",
-		"description": "Creare il tuo spazio online non deve essere fonte di stress, né trasformarsi in un secondo lavoro per te. Ti accompagno passo dopo passo con un metodo chiaro e tempi certi, occupandomi di ogni singolo dettaglio tecnico.",
-		"description2": "Penso io a rendere il tuo sito veloce, sicuro, visibile e facile da usare. Tu non dovrai fare altro che raccontarmi la tua attività; al resto ci penso io, per darti uno strumento pronto ad accogliere i tuoi clienti online con la stessa sicurezza con cui li accoglieresti nel tuo ufficio.",
+		"description": "Sviluppatore web freelance, con base a Firenze. Progetto e realizzo siti per studi professionali, brand e PMI che vogliono presentarsi online con la stessa cura con cui gestiscono il loro lavoro ogni giorno. Architetture moderne, codice scritto a mano, performance misurabili.",
+		"description2": "Mi occupo dell'intero ciclo di progetto: analisi strategica, design, sviluppo, deploy e supporto continuativo. Un solo interlocutore, decisioni rapide, standard tecnici di alto livello. Ogni sito che firmo è pensato per durare nel tempo e per crescere insieme all'attività che rappresenta.",
 		"skills": [
 			"UI/UX Design",
 			"React / Next.js",
@@ -44,28 +44,28 @@
 		"badge": "Cosa faccio",
 		"title": "Servizi",
 		"titleAccent": "su misura",
-		"subtitle": "Ogni progetto è unico. Ecco come posso aiutarti a crescere online.",
+		"subtitle": "Quattro aree di intervento, calibrate sul contesto reale di ogni attività. Dal design del brand fino all'infrastruttura tecnica, ogni servizio è costruito sulle esigenze concrete del tuo settore.",
 		"learnMore": "Scopri di più",
 		"items": [
 			{
 				"icon": "Palette",
 				"title": "Web Design",
-				"description": "Identità visive d'alto profilo costruite attorno al posizionamento del brand, progettate per generare impatto immediato e riconoscibilità duratura."
+				"description": "Interfacce progettate sul posizionamento del tuo brand, non su tendenze generiche. Tipografia, gerarchia visiva e dettagli costruiti per comunicare valore al primo sguardo."
 			},
 			{
 				"icon": "Zap",
 				"title": "Sviluppo Web",
-				"description": "Architetture web moderne, performanti e scalabili. Codice pulito e manutenibile, ottimizzato per velocità, sicurezza e affidabilità nel tempo."
+				"description": "Siti costruiti con framework moderni e codice scritto a mano. Performance reali, manutenzione semplice, infrastruttura affidabile che non ti lascia bloccato dopo sei mesi."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "Ottimizzazione tecnica e strategica per i motori di ricerca. Struttura, velocità e contenuti allineati agli standard più elevati di visibilità organica."
+				"description": "Ottimizzazione tecnica per i motori di ricerca e per gli utenti reali. Struttura semantica, Core Web Vitals al verde, contenuti calibrati sulle ricerche del tuo settore."
 			},
 			{
 				"icon": "ShoppingCart",
 				"title": "E-commerce",
-				"description": "Piattaforme di vendita ad alte prestazioni con flussi d'acquisto ottimizzati, integrazioni avanzate e infrastruttura sicura per volumi di qualsiasi scala."
+				"description": "Negozi online costruiti per vendere, non solo per esistere. Flusso d'acquisto ottimizzato, integrazioni con i gestionali esistenti, infrastruttura pronta a scalare quando l'attività cresce."
 			}
 		]
 	},
@@ -120,27 +120,27 @@
 		"badge": "Come lavoro",
 		"title": "Il mio",
 		"titleAccent": "processo",
-		"subtitle": "Un approccio strutturato e trasparente per risultati che superano le aspettative.",
+		"subtitle": "Quattro fasi, scadenze definite, un solo interlocutore. Un metodo strutturato e trasparente, applicato con coerenza dalla prima call fino al supporto post-lancio.",
 		"steps": [
 			{
 				"number": "01",
-				"title": "Scoperta",
-				"description": "Analisi approfondita del business, del mercato e del posizionamento competitivo. Ogni progetto inizia da una comprensione strategica solida, non da template."
+				"title": "Analisi",
+				"description": "Studio del contesto, del settore e degli obiettivi reali. Una conversazione concreta per capire cosa il sito deve davvero fare, prima di scrivere una riga di codice."
 			},
 			{
 				"number": "02",
 				"title": "Strategia & Design",
-				"description": "Definizione dell'identità digitale e sviluppo del sistema visivo in piena coerenza con il brand. Il design viene validato e approvato prima di ogni avanzamento."
+				"description": "Definizione dell'architettura del sito e del sistema visivo coerente con il brand. Ogni schermata viene validata insieme prima del passaggio successivo, per evitare modifiche tardive e riscritture costose."
 			},
 			{
 				"number": "03",
 				"title": "Sviluppo",
-				"description": "Architettura scalabile, codice ottimizzato e standard tecnici di alto livello. Ogni componente è testato per garantire performance eccellenti su qualsiasi dispositivo."
+				"description": "Codice scritto a mano con framework moderni, testato su dispositivi reali. Aggiornamenti regolari sull'avanzamento e revisioni intermedie per mantenere il progetto sempre allineato."
 			},
 			{
 				"number": "04",
 				"title": "Lancio & Supporto",
-				"description": "Deploy controllato con quality assurance su ogni ambiente. Supporto tecnico continuativo e partnership a lungo termine per la crescita del progetto."
+				"description": "Deploy controllato con verifica completa su ogni ambiente. Affiancamento tecnico continuativo dopo il lancio, per gestire aggiornamenti, modifiche e crescita del progetto nel tempo."
 			}
 		]
 	},
