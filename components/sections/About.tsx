@@ -82,18 +82,32 @@ export default function About() {
 	const inView        = useInView(ref, { once: true, margin: "-100px" });
 	const inViewForGlitch = useInView(ref, { once: true, amount: 0.6 });
 
-	// ── Nave — scroll-triggered (soglia) ────────────────────────────────
+	const isMobileRef = useRef(false);
+	const [isMobile, setIsMobile] = useState(false);
+	const [mobileVH, setMobileVH] = useState<number | null>(null);
+	useEffect(() => {
+		const mobile = window.innerWidth < 1024;
+		isMobileRef.current = mobile;
+		setIsMobile(mobile);
+		if (mobile) setMobileVH(window.innerHeight);
+	}, []);
+
+	// ── Nave — scroll-triggered (desktop) / inView-triggered (mobile) ──
 	const { scrollYProgress: shipProgress } = useScroll({
 		target: sectionRef,
 		offset: ["start start", "end start"],
 	});
+	const sectionInView = useInView(sectionRef, { once: true, amount: 0.3 });
 	const [shipState, setShipState] = useState<"hidden" | "arriving" | "visible">("hidden");
 	const [secRState, setSecRState] = useState<"hidden" | "visible">("hidden");
 	const [secLState, setSecLState] = useState<"hidden" | "visible">("hidden");
 	const shipTriggered = useRef(false);
 	const secRTriggered = useRef(false);
 	const secLTriggered = useRef(false);
+
+	// Desktop: scroll progress triggers ships
 	useMotionValueEvent(shipProgress, "change", (v) => {
+		if (isMobileRef.current) return;
 		if (v > 0.05 && !shipTriggered.current) {
 			shipTriggered.current = true;
 			setShipState("arriving");
@@ -109,6 +123,25 @@ export default function About() {
 		}
 	});
 
+	// Mobile: staggered appearance when section enters view
+	useEffect(() => {
+		if (!isMobile || !sectionInView) return;
+		const t1 = setTimeout(() => {
+			if (!shipTriggered.current) {
+				shipTriggered.current = true;
+				setShipState("arriving");
+				setTimeout(() => setShipState("visible"), 650);
+			}
+		}, 200);
+		const t2 = setTimeout(() => {
+			if (!secRTriggered.current) { secRTriggered.current = true; setSecRState("visible"); }
+		}, 800);
+		const t3 = setTimeout(() => {
+			if (!secLTriggered.current) { secLTriggered.current = true; setSecLState("visible"); }
+		}, 1400);
+		return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+	}, [isMobile, sectionInView]);
+
 	const [phase,             setPhase]             = useState<Phase>("idle");
 	const [word,              setWord]              = useState(NORMAL);
 	const [accent,            setAccent]            = useState(true);
@@ -116,17 +149,11 @@ export default function About() {
 	const [screenIdx,         setScreenIdx]         = useState<number | null>(null);
 	const [corruptedLetters,  setCorruptedLetters]  = useState(0);
 	const [ctaHovered,        setCtaHovered]        = useState(false);
-	const [isMobile,          setIsMobile]          = useState(false);
-
-	useEffect(() => {
-		setIsMobile(window.innerWidth < 1024);
-	}, []);
 
 	const tmr            = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 	const itv            = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 	const corruptedRef   = useRef(0);
 	const glitchCountRef = useRef(0);
-
 
 	const [currentWordSet, setCurrentWordSet] = useState<typeof SCREEN_WORDS_1>(SCREEN_WORDS_1);
 
@@ -259,8 +286,8 @@ export default function About() {
 				)}
 			</AnimatePresence> */}
 
-			<section ref={sectionRef} id="chi-sono" className="bg-[var(--bg)] relative" style={{ height: "260vh" }}>
-			  <div className="sticky top-0 h-screen overflow-hidden">
+			<section ref={sectionRef} id="chi-sono" className="bg-[var(--bg)] relative" style={{ height: mobileVH ? `${mobileVH}px` : "260vh" }}>
+			  <div className="sticky top-0 h-screen overflow-hidden" style={{ height: mobileVH ? `${mobileVH}px` : undefined }}>
 
 				{/* ── Nave Principale — Star Wars arrival ── */}
 				<div className="pointer-events-none absolute inset-0" style={{ zIndex: 0 }}>
