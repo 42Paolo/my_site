@@ -168,7 +168,7 @@
 			],
 			"submit": "Invia messaggio",
 			"sending": "Invio in corso...",
-			"success": "Messaggio inviato! Ti rispondo entro 24 ore. 🎉",
+			"success": "Messaggio inviato! Le rispondo entro 24 ore.",
 			"error": "Qualcosa è andato storto. Riprova o scrivimi direttamente."
 		},
 		"info": {
