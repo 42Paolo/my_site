@@ -399,11 +399,12 @@ export default function About() {
 										className={`w-full py-2 lg:py-8 ${i < 2 ? "border-b border-[var(--border)]" : ""}`}
 									>
 										{/* Mobile: numero e label in riga */}
-										<div className="flex lg:hidden items-center gap-3">
+										<div className="flex lg:hidden gap-3" style={{ alignItems: "center" }}>
 											<span
-												className="font-700 leading-none shrink-0"
+												className="font-700 shrink-0"
 												style={{
 													fontSize: "clamp(2.2rem, 8vw, 3rem)",
+													lineHeight: 1,
 													fontFamily: isGlitching ? "'Bebas Neue', sans-serif" : "'Integral CF', var(--font-display), sans-serif",
 													letterSpacing: isGlitching ? "0.06em" : "-0.04em",
 													animation: isGlitching ? "glitch-shake 0.11s steps(1) infinite" : "none",
@@ -417,11 +418,12 @@ export default function About() {
 												{getStatDisplay(stat)}
 											</span>
 											<span
-												className="font-body text-sm uppercase tracking-[0.14em] leading-tight"
+												className="font-body text-sm uppercase tracking-[0.14em] leading-tight self-center"
 												style={{
 													color: "var(--text-3)",
 													opacity: phase === "hacked" ? 0 : 1,
 													transition: "opacity 0.15s",
+													alignSelf: "center",
 												}}
 											>
 												{labels[i]}
