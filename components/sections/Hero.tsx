@@ -83,9 +83,8 @@ export default function Hero() {
 	});
 
 	const rocketY             = useTransform(scrollYProgress, [0, 1], [0, -1200]);
-	const rocketYMobile       = useTransform(scrollYProgress, [0, 1], [0, -220]);
 	const rocketOpacity       = useTransform(scrollYProgress, [0.55, 1], [1, 0]);
-	// Mobile: visibile subito, opacità decente, si affievolisce solo uscendo dalla sezione
+	// Mobile: solo opacity, nessun parallax Y (evita lag JS-driven su touch scroll)
 	const rocketOpacityMobile = useTransform(
 		scrollYProgress,
 		[0, 0.55, 0.82],
@@ -118,11 +117,9 @@ export default function Hero() {
 						top: "50%",
 						width: "min(85vw, 400px)",
 						zIndex: 1,
-						y: rocketYMobile,
 						opacity: rocketOpacityMobile,
 						x: "-50%",
 						marginTop: "-92%",
-						willChange: "transform, opacity",
 					}}
 				>
 					<motion.div
