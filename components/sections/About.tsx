@@ -370,7 +370,7 @@ export default function About() {
 
 				</div>
 
-				<div className="relative z-10 flex flex-col justify-center h-full">
+				<div className="relative z-10 flex flex-col lg:justify-center h-full">
 				<div ref={ref} className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 py-2 lg:py-16 w-full">
 					{/* ── Badge ── */}
 					<motion.p
@@ -583,12 +583,12 @@ export default function About() {
 								</button>
 							)}
 
-							{/* ── Cyberpunk CTA ── */}
+							{/* ── Cyberpunk CTA — desktop only ── */}
 							<motion.div
 								initial={{ opacity: 0, x: 50 }}
 								animate={inView ? { opacity: 1, x: 0 } : {}}
 								transition={{ duration: 0.7, delay: 0.36, ease: [0.16, 1, 0.3, 1] }}
-								className="flex justify-center lg:justify-start"
+								className="hidden lg:flex justify-start"
 							>
 								<motion.a
 									href="#portfolio"
@@ -660,6 +660,49 @@ export default function About() {
 						</div>
 					</div>
 				</div>
+
+				{/* ── Cyberpunk CTA — mobile, centered in remaining space ── */}
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={inView ? { opacity: 1 } : {}}
+					transition={{ duration: 0.7, delay: 0.5 }}
+					className="lg:hidden flex-1 flex items-center justify-center pb-4"
+				>
+					<motion.a
+						href="#portfolio"
+						onHoverStart={() => setCtaHovered(true)}
+						onHoverEnd={() => setCtaHovered(false)}
+						style={{ display: "inline-flex", alignItems: "center", cursor: "pointer", textDecoration: "none" }}
+					>
+						<motion.div
+							animate={{ width: 290 }}
+							style={{
+								height: 52,
+								overflow: "hidden",
+								display: "flex",
+								alignItems: "center",
+								position: "relative",
+								border: "1px solid #39FF14",
+								clipPath: "polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px)",
+								boxShadow: "0 0 22px rgba(57,255,20,0.35), inset 0 0 18px rgba(57,255,20,0.07)",
+							}}
+						>
+							<span style={{
+								minWidth: 56, display: "flex", alignItems: "center",
+								justifyContent: "center", color: "#39FF14", fontSize: 16,
+								fontFamily: "monospace", flexShrink: 0,
+							}}>▶</span>
+							<span style={{
+								fontFamily: "'Integral CF', sans-serif", fontSize: 11,
+								letterSpacing: "0.2em", color: "#39FF14",
+								whiteSpace: "nowrap", paddingRight: 20,
+							}}>
+								WATCH MY PROJECTS
+							</span>
+						</motion.div>
+					</motion.a>
+				</motion.div>
+
 				</div> {/* flex wrapper */}
 			  </div> {/* sticky */}
 			</section>
