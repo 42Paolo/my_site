@@ -50,17 +50,17 @@
 			{
 				"icon": "Palette",
 				"title": "Design",
-				"description": "Un'identità visiva costruita per restare in mente. Quando un cliente ti incontra una volta — un consiglio, un annuncio, una ricerca — il design fa sì che la volta dopo sia il tuo nome a venire cercato, non quello di un competitor."
+				"description": "Mi occupo dell'aspetto visivo del sito: colori, font, immagini, disposizione dei contenuti. L'obiettivo è che sia coerente con la tua attività, leggibile su qualsiasi schermo e che chi arriva capisca subito di cosa ti occupi."
 			},
 			{
 				"icon": "Zap",
 				"title": "Sviluppo",
-				"description": "La base tecnica che Google sa leggere. Codice pulito, velocità di caricamento, struttura mobile-first: i tre fattori che decidono se il tuo sito viene indicizzato bene e premiato nei risultati, o ignorato."
+				"description": "Costruisco il sito da zero, scrivendo il codice riga per riga. Niente plugin assemblati o template pre-confezionati: ogni componente è pensato per il tuo sito, veloce da caricare e facile da modificare anche tra un anno."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "Il lavoro che porta il sito tra i primi risultati per le ricerche del tuo settore. Analisi delle parole chiave, ottimizzazione tecnica, Core Web Vitals al verde: tutto calibrato perché chi cerca i tuoi servizi ti trovi prima della concorrenza."
+				"description": "Configuro il sito perché Google possa leggerlo e indicizzarlo correttamente: tag, meta description, sitemap, ottimizzazione delle immagini. È la base tecnica per apparire nelle ricerche — non posso promettere il primo posto, ma posso garantire che la struttura sia fatta come si deve."
 			},
 			{
 				"icon": "MapPin",
