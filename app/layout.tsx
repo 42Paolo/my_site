@@ -10,6 +10,11 @@ export const metadata: Metadata = {
 	metadataBase: new URL(
 		process.env.NEXT_PUBLIC_SITE_URL ?? "https://pabrogi.com"
 	),
+	icons: {
+		icon: "/icon.svg",
+		shortcut: "/icon.svg",
+		apple: "/icon.svg",
+	},
 	title: "pabrogi — Web Developer Freelance",
 	description:
 		"Sviluppatore web freelance. Creo siti professionali e premium per aziende e attività che vogliono crescere online.",
