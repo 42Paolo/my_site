@@ -59,7 +59,7 @@ const SCREEN_WORDS_2 = [
 	},
 ];
 
-const NORMAL = "Paolo";
+const NORMAL = "2026";
 const HACKED = "pabrogi";
 const NOISE  = "!#$%@/\\|^<>[]{}X";
 
@@ -236,7 +236,7 @@ export default function About() {
 	// }, [inViewForGlitch, doGlitch]);
 
 	const isGlitching = phase === "to-hacked" || phase === "hacked" || phase === "to-normal";
-	const titleParts  = t.about.title.split("Paolo");
+	const titleParts  = t.about.title.split("2026");
 
 	const getStatDisplay = (stat: { value: string; glitch: string }) => {
 		if (phase === "idle" || phase === "warning") return stat.value;
