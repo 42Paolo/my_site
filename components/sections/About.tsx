@@ -277,7 +277,7 @@ export default function About() {
 							>
 								<motion.div
 									style={{ width: "min(62vw, 880px)" }}
-									animate={{ y: [0, -12, 0] }}
+									animate={isMobile ? {} : { y: [0, -12, 0] }}
 									transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
 								>
 									<Image
@@ -307,7 +307,7 @@ export default function About() {
 								transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
 							>
 								<motion.div
-									animate={{ y: [0, -11, 0] }}
+									animate={isMobile ? {} : { y: [0, -11, 0] }}
 									transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
 								>
 									<Image src="/nave_secondaria.png" alt="" width={1586} height={992}
@@ -329,7 +329,7 @@ export default function About() {
 								transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
 							>
 								<motion.div
-									animate={{ y: [0, -11, 0] }}
+									animate={isMobile ? {} : { y: [0, -11, 0] }}
 									transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1.4 }}
 								>
 									<Image src="/nave_secondaria.png" alt="" width={1586} height={992}

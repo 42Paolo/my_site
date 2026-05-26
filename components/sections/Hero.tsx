@@ -63,9 +63,12 @@ export default function Hero() {
 	const prefersReduced = useReducedMotion();
 	const [scrambling, setScrambling] = useState([false, false, false]);
 	const isMobileRef = useRef(false);
+	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
-		isMobileRef.current = window.innerWidth < 1024;
+		const mobile = window.innerWidth < 1024;
+		isMobileRef.current = mobile;
+		setIsMobile(mobile);
 	}, []);
 
 	const { scrollYProgress } = useScroll({
@@ -279,7 +282,7 @@ export default function Hero() {
 					style={{ opacity: cueOpacity, color: "var(--text-3)" }}
 				>
 					<motion.div
-						animate={prefersReduced ? {} : { scaleX: [1, 1.6, 1] }}
+						animate={(prefersReduced || isMobile) ? {} : { scaleX: [1, 1.6, 1] }}
 						transition={{ duration: 2, repeat: Infinity }}
 						className="w-8 h-px bg-current group-hover:bg-solar transition-colors"
 					/>
