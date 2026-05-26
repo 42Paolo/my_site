@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useMotionValue } from "framer-motion";
+import { useEffect } from "react";
+import { motion, useMotionValue, animate } from "framer-motion";
 
 const CLICKABLE = new Set(["a", "button", "select", "textarea", "label"]);
 
@@ -20,22 +20,19 @@ function isPointer(el: Element | null): boolean {
 }
 
 export default function CustomCursor() {
-	const x = useMotionValue(-100);
-	const y = useMotionValue(-100);
-	const [hovered, setHovered] = useState(false);
-	const rafId = useRef<number>(0);
+	const x    = useMotionValue(-100);
+	const y    = useMotionValue(-100);
+	const size = useMotionValue(10);
 
 	useEffect(() => {
 		const onMove = (e: MouseEvent) => {
-			// Cancel any pending RAF to avoid batching lag
-			cancelAnimationFrame(rafId.current);
-			rafId.current = requestAnimationFrame(() => {
-				x.set(e.clientX);
-				y.set(e.clientY);
-			});
-			setHovered(isPointer(e.target as Element));
+			x.set(e.clientX);
+			y.set(e.clientY);
+			const target = isPointer(e.target as Element) ? 20 : 10;
+			if (Math.abs(size.get() - target) > 0.5) {
+				animate(size, target, { duration: 0.12, ease: [0.16, 1, 0.3, 1] });
+			}
 		};
-
 		const onLeave = () => { x.set(-100); y.set(-100); };
 
 		window.addEventListener("mousemove", onMove);
@@ -43,9 +40,8 @@ export default function CustomCursor() {
 		return () => {
 			window.removeEventListener("mousemove", onMove);
 			document.documentElement.removeEventListener("mouseleave", onLeave);
-			cancelAnimationFrame(rafId.current);
 		};
-	}, [x, y]);
+	}, [x, y, size]);
 
 	return (
 		<motion.div
@@ -55,15 +51,12 @@ export default function CustomCursor() {
 				y,
 				translateX: "-50%",
 				translateY: "-50%",
+				width: size,
+				height: size,
 				borderRadius: "50%",
 				background: "#E8F0FF",
 				opacity: 0.9,
 			}}
-			animate={{
-				width: hovered ? 20 : 10,
-				height: hovered ? 20 : 10,
-			}}
-			transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
 		/>
 	);
 }
