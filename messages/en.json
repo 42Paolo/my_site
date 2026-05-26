@@ -50,22 +50,22 @@
 			{
 				"icon": "Palette",
 				"title": "Design",
-				"description": "Design isn't decoration — it's your site's first sales argument. Color, typography, layout and visual hierarchy are crafted to convey credibility at a glance, guide users toward the action that matters, and perform flawlessly on any device."
+				"description": "First impressions are non-negotiable. The site's visual identity is designed around your industry and your clients: color, typography, layout and content hierarchy calibrated to communicate credibility within seconds and guide visitors toward the action that matters."
 			},
 			{
 				"icon": "Zap",
 				"title": "Development",
-				"description": "No pre-assembled templates, no unnecessary third-party plugins. Every site is built on modern architectures with measurable performance and maintainable code — no hidden dependencies or unexpected costs a year from now."
+				"description": "Every site is built from scratch on modern architectures and custom code. No pre-made templates, no third-party plugins that break with every update. The result is a fast, stable site that's entirely yours."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "Organic visibility is built before the site goes live. Semantic structure, speed, metadata, structured data and URL architecture are optimized from the start — so Google reads, understands, and ranks the site in the searches that matter for your business."
+				"description": "Organic visibility is built before the site goes live. Semantic structure, loading speed, metadata and structured data: every element is configured to tell Google what you do, for whom, and where. The sites I build are designed to be found."
 			},
 			{
 				"icon": "MapPin",
 				"title": "Google & Local",
-				"description": "For businesses operating locally, Google Business Profile is often the first touchpoint with a client. Systematic optimization of information, categories, photos and reviews — so your profile appears in local searches at the exact moment someone is looking for what you do."
+				"description": "For businesses operating locally, local search is the most direct channel to the client. Optimized Google Business Profile, precise categories, professional photos and review management. Your name present when someone searches for what you do, in your area."
 			}
 		]
 	},
