@@ -50,22 +50,22 @@
 			{
 				"icon": "Palette",
 				"title": "Web Design",
-				"description": "Interfacce curate nei dettagli, coerenti con l'identità del brand e progettate per trasmettere professionalità e fiducia al primo sguardo."
+				"description": "Identità visive d'alto profilo costruite attorno al posizionamento del brand, progettate per generare impatto immediato e riconoscibilità duratura."
 			},
 			{
 				"icon": "Zap",
 				"title": "Sviluppo Web",
-				"description": "Siti veloci, sicuri e scalabili realizzati con tecnologie consolidate, ottimizzati per le performance e pronti a crescere con il tuo business."
+				"description": "Architetture web moderne, performanti e scalabili. Codice pulito e manutenibile, ottimizzato per velocità, sicurezza e affidabilità nel tempo."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "Struttura tecnica e contenuti ottimizzati per i motori di ricerca, con monitoraggio dei risultati e miglioramento continuo della visibilità online."
+				"description": "Ottimizzazione tecnica e strategica per i motori di ricerca. Struttura, velocità e contenuti allineati agli standard più elevati di visibilità organica."
 			},
 			{
 				"icon": "ShoppingCart",
 				"title": "E-commerce",
-				"description": "Soluzioni di vendita online complete con pagamenti certificati, gestione intuitiva del catalogo e un'esperienza d'acquisto pensata per fidelizzare."
+				"description": "Piattaforme di vendita ad alte prestazioni con flussi d'acquisto ottimizzati, integrazioni avanzate e infrastruttura sicura per volumi di qualsiasi scala."
 			}
 		]
 	},
@@ -125,22 +125,22 @@
 			{
 				"number": "01",
 				"title": "Scoperta",
-				"description": "Analizziamo insieme gli obiettivi del progetto, il settore di riferimento e i punti di forza della tua attività. Si parte con una consulenza gratuita, senza impegno."
+				"description": "Analisi approfondita del business, del mercato e del posizionamento competitivo. Ogni progetto inizia da una comprensione strategica solida, non da template."
 			},
 			{
 				"number": "02",
 				"title": "Strategia & Design",
-				"description": "Definisco la strategia visiva e presento il design completo prima di procedere. Ogni proposta viene condivisa e approvata insieme, per un risultato che rispecchi davvero il tuo brand."
+				"description": "Definizione dell'identità digitale e sviluppo del sistema visivo in piena coerenza con il brand. Il design viene validato e approvato prima di ogni avanzamento."
 			},
 			{
 				"number": "03",
 				"title": "Sviluppo",
-				"description": "Realizzo il progetto con codice performante, sicuro e ottimizzato per ogni dispositivo. Ricevi aggiornamenti costanti durante tutto il processo, senza sorprese."
+				"description": "Architettura scalabile, codice ottimizzato e standard tecnici di alto livello. Ogni componente è testato per garantire performance eccellenti su qualsiasi dispositivo."
 			},
 			{
 				"number": "04",
 				"title": "Lancio & Supporto",
-				"description": "Il sito viene pubblicato dopo test tecnici approfonditi. Resto disponibile per assistenza, aggiornamenti e supporto anche dopo il go-live."
+				"description": "Deploy controllato con quality assurance su ogni ambiente. Supporto tecnico continuativo e partnership a lungo termine per la crescita del progetto."
 			}
 		]
 	},
