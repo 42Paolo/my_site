@@ -387,7 +387,7 @@ export default function About() {
 					<div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-3 lg:gap-24 items-start">
 
 						{/* ── Left — stats ── */}
-						<div className="flex flex-col gap-0 items-center lg:items-start">
+						<div className="flex flex-col gap-0 items-start">
 							{STATS.map((stat, i) => {
 								const labels = [t.about.yearsLabel, t.about.projectsLabel, t.about.clientsLabel];
 								return (
@@ -396,37 +396,67 @@ export default function About() {
 										initial={{ opacity: 0, x: -90 }}
 										animate={inView ? { opacity: 1, x: 0 } : {}}
 										transition={{ duration: 0.8, delay: 0.05 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-										className={`flex flex-col py-2 lg:py-8 ${i < 2 ? "border-b border-[var(--border)]" : ""}`}
+										className={`w-full py-2 lg:py-8 ${i < 2 ? "border-b border-[var(--border)]" : ""}`}
 									>
-										<span
-											className="font-700 leading-none block"
-											style={{
-												fontSize: "clamp(3rem, 9vw, 9rem)",
-												display: "inline-block",
-												fontFamily: isGlitching ? "'Bebas Neue', sans-serif" : "'Integral CF', var(--font-display), sans-serif",
-												letterSpacing: isGlitching ? "0.06em" : "-0.04em",
-												animation: isGlitching ? "glitch-shake 0.11s steps(1) infinite" : "none",
-												transition: "font-family 0s, letter-spacing 0.05s",
-												background: isGlitching
-													? stat.color
-													: "linear-gradient(160deg, #F8FAFC 0%, #CBD5E1 40%, #8096B0 100%)",
-												WebkitBackgroundClip: isGlitching ? undefined : "text",
-												WebkitTextFillColor: isGlitching ? stat.color : "transparent",
-												backgroundClip: isGlitching ? undefined : "text",
-											}}
-										>
-											{getStatDisplay(stat)}
-										</span>
-										<span
-											className="font-body text-xs uppercase tracking-[0.18em] mt-2"
-											style={{
-												color: "var(--text-3)",
-												opacity: phase === "hacked" ? 0 : 1,
-												transition: "opacity 0.15s",
-											}}
-										>
-											{labels[i]}
-										</span>
+										{/* Mobile: numero e label in riga */}
+										<div className="flex lg:hidden items-center gap-3">
+											<span
+												className="font-700 leading-none shrink-0"
+												style={{
+													fontSize: "clamp(2.2rem, 8vw, 3rem)",
+													fontFamily: isGlitching ? "'Bebas Neue', sans-serif" : "'Integral CF', var(--font-display), sans-serif",
+													letterSpacing: isGlitching ? "0.06em" : "-0.04em",
+													animation: isGlitching ? "glitch-shake 0.11s steps(1) infinite" : "none",
+													transition: "font-family 0s, letter-spacing 0.05s",
+													background: isGlitching ? stat.color : "linear-gradient(160deg, #F8FAFC 0%, #CBD5E1 40%, #8096B0 100%)",
+													WebkitBackgroundClip: isGlitching ? undefined : "text",
+													WebkitTextFillColor: isGlitching ? stat.color : "transparent",
+													backgroundClip: isGlitching ? undefined : "text",
+												}}
+											>
+												{getStatDisplay(stat)}
+											</span>
+											<span
+												className="font-body text-sm uppercase tracking-[0.14em] leading-tight"
+												style={{
+													color: "var(--text-3)",
+													opacity: phase === "hacked" ? 0 : 1,
+													transition: "opacity 0.15s",
+												}}
+											>
+												{labels[i]}
+											</span>
+										</div>
+										{/* Desktop: numero sopra, label sotto */}
+										<div className="hidden lg:flex flex-col">
+											<span
+												className="font-700 leading-none block"
+												style={{
+													fontSize: "clamp(3rem, 9vw, 9rem)",
+													display: "inline-block",
+													fontFamily: isGlitching ? "'Bebas Neue', sans-serif" : "'Integral CF', var(--font-display), sans-serif",
+													letterSpacing: isGlitching ? "0.06em" : "-0.04em",
+													animation: isGlitching ? "glitch-shake 0.11s steps(1) infinite" : "none",
+													transition: "font-family 0s, letter-spacing 0.05s",
+													background: isGlitching ? stat.color : "linear-gradient(160deg, #F8FAFC 0%, #CBD5E1 40%, #8096B0 100%)",
+													WebkitBackgroundClip: isGlitching ? undefined : "text",
+													WebkitTextFillColor: isGlitching ? stat.color : "transparent",
+													backgroundClip: isGlitching ? undefined : "text",
+												}}
+											>
+												{getStatDisplay(stat)}
+											</span>
+											<span
+												className="font-body text-xs uppercase tracking-[0.18em] mt-2"
+												style={{
+													color: "var(--text-3)",
+													opacity: phase === "hacked" ? 0 : 1,
+													transition: "opacity 0.15s",
+												}}
+											>
+												{labels[i]}
+											</span>
+										</div>
 									</motion.div>
 								);
 							})}
