@@ -1,0 +1,158 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120608"/>
+      <stop offset="50%" stop-color="#1E0C0A"/>
+      <stop offset="100%" stop-color="#0E0405"/>
+    </linearGradient>
+    <linearGradient id="warmH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B86A3A" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#D4935A" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#B86A3A" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="warmGlow" cx="50%" cy="55%" r="40%">
+      <stop offset="0%" stop-color="#C4705A" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#C4705A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="candleGlow" cx="50%" cy="40%" r="30%">
+      <stop offset="0%" stop-color="#E8B060" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#E8B060" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowWarm">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="330" rx="340" ry="220" fill="url(#warmGlow)"/>
+  <ellipse cx="400" cy="240" rx="200" ry="150" fill="url(#candleGlow)"/>
+
+  <!-- Faint stone/brick texture lines -->
+  <g opacity="0.05" stroke="#C4705A" stroke-width="0.5">
+    <line x1="0" y1="540" x2="800" y2="540"/>
+    <line x1="0" y1="520" x2="800" y2="520"/>
+    <line x1="0" y1="560" x2="800" y2="560"/>
+    <line x1="0" y1="580" x2="800" y2="580"/>
+    <!-- Brick offset -->
+    <line x1="0" y1="530" x2="400" y2="530"/>
+    <line x1="400" y1="550" x2="800" y2="550"/>
+    <line x1="160" y1="540" x2="160" y2="560"/>
+    <line x1="320" y1="520" x2="320" y2="540"/>
+    <line x1="480" y1="540" x2="480" y2="560"/>
+    <line x1="640" y1="520" x2="640" y2="540"/>
+  </g>
+
+  <!-- Ghost 1979 number -->
+  <text x="400" y="400"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="260"
+    fill="#C4705A"
+    opacity="0.05"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-weight="700">1979</text>
+
+  <!-- Wine glass outline (centered, elegant) -->
+  <g transform="translate(400,295)" fill="none" stroke="#D4935A" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Bowl -->
+    <path d="M-48,-110 Q-55,-60 -40,-20 Q-22,15 0,22 Q22,15 40,-20 Q55,-60 48,-110"
+      stroke-width="1.2" opacity="0.7"/>
+    <!-- Foot curve bottom of bowl -->
+    <path d="M-40,-20 Q-22,15 0,22 Q22,15 40,-20" stroke-width="1.2" opacity="0.7"/>
+    <!-- Stem -->
+    <line x1="0" y1="22" x2="0" y2="98" stroke-width="1" opacity="0.6"/>
+    <!-- Base -->
+    <path d="M-42,98 Q-30,112 0,114 Q30,112 42,98" stroke-width="1.2" opacity="0.6"/>
+    <!-- Wine level (a third full) -->
+    <path d="M-44,-58 Q-50,-30 -40,-20 Q-22,15 0,22 Q22,15 40,-20 Q50,-30 44,-58"
+      stroke-width="0" fill="#C4705A" opacity="0.18"/>
+    <!-- Wine surface line -->
+    <line x1="-44" y1="-58" x2="44" y2="-58" stroke-width="0.8" stroke="#C4705A" opacity="0.4"/>
+    <!-- Light reflection -->
+    <path d="M-28,-90 Q-32,-70 -26,-50" stroke-width="0.9" opacity="0.25"/>
+  </g>
+
+  <!-- Top ornament: wreath / circular -->
+  <g transform="translate(400,108)" fill="none" stroke="#D4935A" stroke-width="0.9" opacity="0.5">
+    <circle cx="0" cy="0" r="22"/>
+    <circle cx="0" cy="0" r="16"/>
+    <!-- Leaf marks around inner circle -->
+    <g opacity="0.7">
+      <ellipse cx="0" cy="-19" rx="3" ry="5" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-19" rx="3" ry="5" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-19" rx="3" ry="5" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-19" rx="3" ry="5" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-19" rx="3" ry="5" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-19" rx="3" ry="5" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-19" rx="3" ry="5" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-19" rx="3" ry="5" transform="rotate(315)"/>
+    </g>
+  </g>
+
+  <!-- Horizontal rules -->
+  <rect x="120" y="164" width="560" height="0.6" fill="url(#warmH)" opacity="0.45"/>
+  <rect x="120" y="430" width="560" height="0.6" fill="url(#warmH)" opacity="0.35"/>
+
+  <!-- LA TAVERNA text -->
+  <text x="400" y="462"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="16"
+    fill="#D4935A"
+    text-anchor="middle"
+    letter-spacing="10"
+    font-weight="300"
+    opacity="0.85">LA TAVERNA</text>
+
+  <!-- DELLA ROCCA text -->
+  <text x="400" y="494"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="42"
+    fill="#E8C098"
+    text-anchor="middle"
+    letter-spacing="8"
+    font-weight="400">DELLA ROCCA</text>
+
+  <!-- Tagline -->
+  <text x="400" y="526"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="9"
+    fill="#C4705A"
+    text-anchor="middle"
+    letter-spacing="4"
+    opacity="0.6">RISTORANTE · PRATO · DAL 1979</text>
+
+  <!-- DAL 1979 badge — small pill -->
+  <rect x="348" y="170" width="104" height="22" rx="11" fill="none" stroke="#C4705A" stroke-width="0.8" opacity="0.4"/>
+  <text x="400" y="185"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="9"
+    fill="#D4935A"
+    text-anchor="middle"
+    letter-spacing="4"
+    opacity="0.7">DAL 1979</text>
+
+  <!-- Left/right vertical accent lines -->
+  <rect x="72" y="52" width="0.5" height="496" fill="#C4705A" opacity="0.1"/>
+  <rect x="727" y="52" width="0.5" height="496" fill="#C4705A" opacity="0.1"/>
+
+  <!-- Dot details -->
+  <g fill="#D4935A" opacity="0.3">
+    <circle cx="90" cy="298" r="1.5"/>
+    <circle cx="90" cy="312" r="1.5"/>
+    <circle cx="90" cy="326" r="1.5"/>
+    <circle cx="710" cy="298" r="1.5"/>
+    <circle cx="710" cy="312" r="1.5"/>
+    <circle cx="710" cy="326" r="1.5"/>
+  </g>
+
+  <!-- Credit -->
+  <text x="748" y="565"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="7.5"
+    fill="#C4705A"
+    text-anchor="end"
+    letter-spacing="3"
+    opacity="0.25">PABROGI.COM</text>
+</svg>

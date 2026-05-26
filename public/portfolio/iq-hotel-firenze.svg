@@ -1,0 +1,149 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2EDE6"/>
+      <stop offset="100%" stop-color="#E8E0D5"/>
+    </linearGradient>
+    <linearGradient id="tealV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D7A6A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1A5C4E" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="archGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D7A6A" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#2D7A6A" stop-opacity="0.02"/>
+    </linearGradient>
+    <radialGradient id="skyGlow" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#B8D4CC" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#B8D4CC" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#2D7A6A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <!-- Subtle sky glow -->
+  <ellipse cx="400" cy="180" rx="380" ry="200" fill="url(#skyGlow)"/>
+
+  <!-- Geometric floor plan lines (top left area) -->
+  <g opacity="0.1" stroke="#2D7A6A" stroke-width="0.6" fill="none">
+    <!-- Floor plan abstraction -->
+    <rect x="56" y="56" width="180" height="120"/>
+    <rect x="56" y="56" width="90" height="60"/>
+    <rect x="146" y="56" width="90" height="60"/>
+    <rect x="56" y="116" width="60" height="60"/>
+    <line x1="56" y1="86" x2="236" y2="86"/>
+    <line x1="116" y1="56" x2="116" y2="176"/>
+    <line x1="146" y1="116" x2="146" y2="176"/>
+  </g>
+
+  <!-- Right geometric accent -->
+  <g opacity="0.08" stroke="#2D7A6A" stroke-width="0.5" fill="none">
+    <rect x="620" y="400" width="120" height="140"/>
+    <rect x="640" y="420" width="80" height="100"/>
+    <line x1="680" y1="400" x2="680" y2="540"/>
+    <line x1="620" y1="450" x2="740" y2="450"/>
+    <line x1="620" y1="490" x2="740" y2="490"/>
+  </g>
+
+  <!-- Three arched windows (main visual) -->
+  <g filter="url(#shadow)">
+    <!-- Left arch -->
+    <path d="M218,440 L218,240 Q218,188 262,188 Q306,188 306,240 L306,440 Z"
+      fill="url(#tealV)" opacity="0.9"/>
+    <!-- Center arch (taller) -->
+    <path d="M330,440 L330,210 Q330,152 400,152 Q470,152 470,210 L470,440 Z"
+      fill="url(#tealV)" opacity="0.95"/>
+    <!-- Right arch -->
+    <path d="M494,440 L494,240 Q494,188 538,188 Q582,188 582,240 L582,440 Z"
+      fill="url(#tealV)" opacity="0.9"/>
+  </g>
+
+  <!-- Arch interior lighter (window pane effect) -->
+  <path d="M225,435 L225,242 Q225,196 262,196 Q299,196 299,242 L299,435 Z"
+    fill="#C8DDD9" opacity="0.2"/>
+  <path d="M338,435 L338,213 Q338,162 400,162 Q462,162 462,213 L462,435 Z"
+    fill="#C8DDD9" opacity="0.22"/>
+  <path d="M501,435 L501,242 Q501,196 538,196 Q575,196 575,242 L575,435 Z"
+    fill="#C8DDD9" opacity="0.2"/>
+
+  <!-- Arch window pane lines -->
+  <g stroke="#E8E0D5" stroke-width="1" opacity="0.5">
+    <line x1="262" y1="196" x2="262" y2="435"/>
+    <line x1="225" y1="320" x2="299" y2="320"/>
+    <line x1="400" y1="162" x2="400" y2="435"/>
+    <line x1="338" y1="300" x2="462" y2="300"/>
+    <line x1="538" y1="196" x2="538" y2="435"/>
+    <line x1="501" y1="320" x2="575" y2="320"/>
+  </g>
+
+  <!-- Horizontal base line -->
+  <rect x="0" y="440" width="800" height="2" fill="#2D7A6A" opacity="0.35"/>
+  <!-- Base wall area -->
+  <rect x="0" y="440" width="800" height="160" fill="#2D7A6A" opacity="0.06"/>
+
+  <!-- IQ logo text (top right) -->
+  <text x="720" y="116"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="72"
+    fill="#2D7A6A"
+    text-anchor="middle"
+    font-weight="700"
+    letter-spacing="-3"
+    opacity="0.9">IQ</text>
+
+  <!-- HOTEL text -->
+  <text x="720" y="145"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="11"
+    fill="#2D7A6A"
+    text-anchor="middle"
+    letter-spacing="8"
+    font-weight="300"
+    opacity="0.7">HOTEL</text>
+
+  <!-- Thin separator -->
+  <rect x="680" y="154" width="80" height="0.7" fill="#2D7A6A" opacity="0.3"/>
+
+  <!-- FIRENZE badge -->
+  <text x="720" y="172"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="9"
+    fill="#2D7A6A"
+    text-anchor="middle"
+    letter-spacing="5"
+    opacity="0.5">FIRENZE</text>
+
+  <!-- Bottom text area -->
+  <text x="400" y="490"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="13"
+    fill="#2D7A6A"
+    text-anchor="middle"
+    letter-spacing="6"
+    font-weight="400"
+    opacity="0.65">HOTEL  ·  DESIGN  ·  FIRENZE  ·  2024</text>
+
+  <!-- Small dot details -->
+  <g fill="#2D7A6A" opacity="0.25">
+    <circle cx="190" cy="460" r="2"/>
+    <circle cx="204" cy="460" r="2"/>
+    <circle cx="218" cy="460" r="2"/>
+    <circle cx="582" cy="460" r="2"/>
+    <circle cx="596" cy="460" r="2"/>
+    <circle cx="610" cy="460" r="2"/>
+  </g>
+
+  <!-- Thin top line -->
+  <rect x="44" y="44" width="712" height="0.6" fill="#2D7A6A" opacity="0.18"/>
+
+  <!-- Credit -->
+  <text x="748" y="565"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="7.5"
+    fill="#4A9080"
+    text-anchor="end"
+    letter-spacing="3"
+    opacity="0.25">PABROGI.COM</text>
+</svg>

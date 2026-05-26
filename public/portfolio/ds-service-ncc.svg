@@ -1,0 +1,186 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030810"/>
+      <stop offset="50%" stop-color="#071228"/>
+      <stop offset="100%" stop-color="#040A18"/>
+    </linearGradient>
+    <linearGradient id="silverH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6A8EAD" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#A0C0DC" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#6A8EAD" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="roadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E4A7A" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#16AEEF" stop-opacity="0.05"/>
+    </linearGradient>
+    <radialGradient id="headlight1" cx="30%" cy="55%" r="20%">
+      <stop offset="0%" stop-color="#A0C8F0" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#A0C8F0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="headlight2" cx="70%" cy="55%" r="18%">
+      <stop offset="0%" stop-color="#A0C8F0" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#A0C8F0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowBlue">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- City grid lines (road network abstraction) -->
+  <g opacity="0.07" stroke="#7AAAD0" stroke-width="0.5">
+    <!-- Vertical lines -->
+    <line x1="120" y1="0" x2="120" y2="600"/>
+    <line x1="240" y1="0" x2="240" y2="600"/>
+    <line x1="360" y1="0" x2="360" y2="600"/>
+    <line x1="480" y1="0" x2="480" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/>
+    <line x1="680" y1="0" x2="680" y2="600"/>
+    <!-- Horizontal lines -->
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="320" x2="800" y2="320"/>
+    <line x1="0" y1="440" x2="800" y2="440"/>
+    <line x1="0" y1="520" x2="800" y2="520"/>
+  </g>
+
+  <!-- Road perspective lines (converging to horizon) -->
+  <g opacity="0.12" stroke="#4A80B0" stroke-width="1">
+    <line x1="400" y1="310" x2="0" y2="600"/>
+    <line x1="400" y1="310" x2="800" y2="600"/>
+    <line x1="400" y1="310" x2="120" y2="600"/>
+    <line x1="400" y1="310" x2="680" y2="600"/>
+  </g>
+
+  <!-- Headlight glow effects -->
+  <ellipse cx="400" cy="330" rx="280" ry="130" fill="url(#headlight1)"/>
+  <ellipse cx="400" cy="330" rx="250" ry="110" fill="url(#headlight2)"/>
+
+  <!-- Ground reflection line -->
+  <rect x="0" y="430" width="800" height="1" fill="#4A80B0" opacity="0.25"/>
+  <rect x="0" y="430" width="800" height="80" fill="url(#roadGrad)"/>
+
+  <!-- Car silhouette — elegant sedan, thin strokes only -->
+  <g transform="translate(400, 330)" fill="none" stroke="#A0C8F0" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Body outline -->
+    <path d="M-240,30 L-240,-10 L-190,-10 L-130,-60 L130,-60 L190,-10 L240,-10 L240,30 Z"
+      stroke-width="1.2" opacity="0.7"/>
+    <!-- Roof -->
+    <path d="M-100,-60 L-70,-110 L70,-110 L100,-60"
+      stroke-width="1.2" opacity="0.7"/>
+    <!-- Windows -->
+    <path d="M-90,-62 L-62,-104 L0,-104 L0,-62 Z" stroke-width="0.9" opacity="0.5"/>
+    <path d="M6,-62 L6,-104 L62,-104 L90,-62 Z" stroke-width="0.9" opacity="0.5"/>
+    <!-- Front wheel arch -->
+    <path d="M-190,-10 C-190,30 -155,50 -115,50 C-75,50 -40,30 -40,-10"
+      stroke-width="1" opacity="0.6"/>
+    <!-- Rear wheel arch -->
+    <path d="M40,-10 C40,30 75,50 115,50 C155,50 190,30 190,-10"
+      stroke-width="1" opacity="0.6"/>
+    <!-- Wheels -->
+    <circle cx="-115" cy="30" r="30" stroke-width="1" opacity="0.5"/>
+    <circle cx="-115" cy="30" r="18" stroke-width="0.7" opacity="0.35"/>
+    <circle cx="115" cy="30" r="30" stroke-width="1" opacity="0.5"/>
+    <circle cx="115" cy="30" r="18" stroke-width="0.7" opacity="0.35"/>
+    <!-- Headlights -->
+    <line x1="237" y1="0" x2="237" y2="-8" stroke-width="1.8" stroke="#C8E4F8" opacity="0.9"/>
+    <line x1="-237" y1="0" x2="-237" y2="-8" stroke-width="1.8" stroke="#C8E4F8" opacity="0.9"/>
+    <!-- Chrome detail line -->
+    <line x1="-150" y1="10" x2="150" y2="10" stroke-width="0.7" opacity="0.4"/>
+  </g>
+
+  <!-- Speed lines (motion effect) -->
+  <g opacity="0.08" stroke="#A0C8F0" stroke-width="0.6">
+    <line x1="0" y1="290" x2="60" y2="290"/>
+    <line x1="0" y1="300" x2="40" y2="300"/>
+    <line x1="0" y1="310" x2="50" y2="310"/>
+    <line x1="740" y1="290" x2="800" y2="290"/>
+    <line x1="755" y1="300" x2="800" y2="300"/>
+    <line x1="748" y1="310" x2="800" y2="310"/>
+  </g>
+
+  <!-- Horizontal rule (above text) -->
+  <rect x="100" y="160" width="600" height="0.6" fill="url(#silverH)" opacity="0.5"/>
+
+  <!-- Main title DS -->
+  <text x="320" y="155"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="88"
+    fill="#C8E4F8"
+    text-anchor="middle"
+    letter-spacing="-4"
+    font-weight="700"
+    opacity="0.9">DS</text>
+
+  <!-- SERVICE text -->
+  <text x="530" y="148"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="30"
+    fill="#6A9FC0"
+    text-anchor="middle"
+    letter-spacing="10"
+    font-weight="300"
+    opacity="0.9">SERVICE</text>
+
+  <!-- NCC + tagline -->
+  <text x="530" y="178"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="14"
+    fill="#A0C8F0"
+    text-anchor="middle"
+    letter-spacing="8"
+    font-weight="400"
+    opacity="0.8">N C C</text>
+
+  <!-- Divider between DS and SERVICE -->
+  <rect x="410" y="100" width="0.6" height="80" fill="#6A9FC0" opacity="0.4"/>
+
+  <!-- Bottom tagline -->
+  <rect x="100" y="490" width="600" height="0.6" fill="url(#silverH)" opacity="0.35"/>
+  <text x="400" y="516"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="9"
+    fill="#7AAAD0"
+    text-anchor="middle"
+    letter-spacing="5"
+    opacity="0.65">TRANSFER · LUXURY · MILANO · 2024</text>
+
+  <!-- Small licence plate detail (fun touch) -->
+  <rect x="366" y="390" width="68" height="20" rx="2" fill="none" stroke="#7AAAD0" stroke-width="0.8" opacity="0.4"/>
+  <text x="400" y="404"
+    font-family="'Courier New', monospace"
+    font-size="8"
+    fill="#9ABCD4"
+    text-anchor="middle"
+    letter-spacing="2"
+    opacity="0.5">DS·NCC·IT</text>
+
+  <!-- Stars (city lights reflected) -->
+  <g fill="#C8E4F8">
+    <circle cx="80" cy="60" r="1" opacity="0.6"/>
+    <circle cx="156" cy="35" r="1.5" opacity="0.4"/>
+    <circle cx="230" cy="80" r="1" opacity="0.5"/>
+    <circle cx="340" cy="48" r="1" opacity="0.3"/>
+    <circle cx="460" cy="28" r="1.5" opacity="0.5"/>
+    <circle cx="560" cy="65" r="1" opacity="0.4"/>
+    <circle cx="650" cy="40" r="1" opacity="0.6"/>
+    <circle cx="720" cy="78" r="1.5" opacity="0.35"/>
+    <circle cx="760" cy="52" r="1" opacity="0.4"/>
+  </g>
+
+  <!-- Credit -->
+  <text x="748" y="565"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="7.5"
+    fill="#6A9FC0"
+    text-anchor="end"
+    letter-spacing="3"
+    opacity="0.25">PABROGI.COM</text>
+</svg>

@@ -1,0 +1,161 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0407"/>
+      <stop offset="55%" stop-color="#1A0810"/>
+      <stop offset="100%" stop-color="#100408"/>
+    </linearGradient>
+    <linearGradient id="roseH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9A4A5A" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C4846A" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#9A4A5A" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="warmGlow" cx="50%" cy="45%" r="42%">
+      <stop offset="0%" stop-color="#B46060" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#B46060" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="wineGlow" cx="65%" cy="60%" r="30%">
+      <stop offset="0%" stop-color="#C4846A" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#C4846A" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowR">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlowR">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="270" rx="360" ry="240" fill="url(#warmGlow)"/>
+  <ellipse cx="520" cy="360" rx="200" ry="160" fill="url(#wineGlow)"/>
+
+  <!-- Vineyard rows pattern (bottom half) -->
+  <g opacity="0.14" stroke="#C4846A" stroke-width="0.7">
+    <!-- Diagonal vineyard rows (perspective) -->
+    <line x1="0" y1="510" x2="800" y2="400"/>
+    <line x1="0" y1="540" x2="800" y2="430"/>
+    <line x1="0" y1="570" x2="800" y2="460"/>
+    <line x1="0" y1="590" x2="800" y2="490"/>
+    <line x1="0" y1="480" x2="800" y2="370"/>
+    <line x1="0" y1="455" x2="600" y2="370"/>
+    <line x1="0" y1="430" x2="480" y2="370"/>
+    <!-- Cross rows -->
+    <line x1="100" y1="600" x2="200" y2="370"/>
+    <line x1="220" y1="600" x2="300" y2="370"/>
+    <line x1="340" y1="600" x2="400" y2="370"/>
+    <line x1="460" y1="600" x2="510" y2="370"/>
+    <line x1="580" y1="600" x2="620" y2="380"/>
+    <line x1="700" y1="600" x2="730" y2="400"/>
+  </g>
+
+  <!-- Rolling hills silhouette -->
+  <path d="M0,390 Q120,350 240,368 Q360,340 480,358 Q600,335 720,360 Q760,368 800,352 L800,600 L0,600 Z"
+    fill="#180610" opacity="0.8"/>
+  <path d="M0,418 Q100,396 200,408 Q320,384 440,402 Q560,385 680,400 Q740,408 800,394 L800,600 L0,600 Z"
+    fill="#1A0812"/>
+
+  <!-- Rose window (circular ornament — Chianti/religious architecture ref) -->
+  <g transform="translate(400,272)" opacity="0.55" fill="none" stroke="#C4846A" stroke-width="1">
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="118"/>
+    <!-- Inner circles -->
+    <circle cx="0" cy="0" r="96"/>
+    <circle cx="0" cy="0" r="48"/>
+    <circle cx="0" cy="0" r="20"/>
+    <!-- Spokes (12 divisions) -->
+    <line x1="0" y1="-118" x2="0" y2="118"/>
+    <line x1="-118" y1="0" x2="118" y2="0"/>
+    <line x1="-83.4" y1="-83.4" x2="83.4" y2="83.4"/>
+    <line x1="83.4" y1="-83.4" x2="-83.4" y2="83.4"/>
+    <line x1="-59" y1="-102" x2="59" y2="102"/>
+    <line x1="59" y1="-102" x2="-59" y2="102"/>
+    <!-- Petal shapes between inner circles -->
+    <circle cx="0" cy="-72" r="20" opacity="0.6"/>
+    <circle cx="72" cy="0" r="20" opacity="0.6"/>
+    <circle cx="0" cy="72" r="20" opacity="0.6"/>
+    <circle cx="-72" cy="0" r="20" opacity="0.6"/>
+    <circle cx="51" cy="-51" r="16" opacity="0.4"/>
+    <circle cx="51" cy="51" r="16" opacity="0.4"/>
+    <circle cx="-51" cy="51" r="16" opacity="0.4"/>
+    <circle cx="-51" cy="-51" r="16" opacity="0.4"/>
+  </g>
+  <!-- Rose window fill (very subtle) -->
+  <circle cx="400" cy="272" r="118" fill="#C4846A" opacity="0.025"/>
+
+  <!-- Horizontal rules -->
+  <rect x="120" y="148" width="560" height="0.6" fill="url(#roseH)" opacity="0.4"/>
+  <rect x="120" y="430" width="560" height="0.6" fill="url(#roseH)" opacity="0.35"/>
+
+  <!-- VILLA BORDONI text -->
+  <text x="400" y="112"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="16"
+    fill="#C4846A"
+    text-anchor="middle"
+    letter-spacing="10"
+    font-weight="300"
+    opacity="0.8">VILLA BORDONI</text>
+
+  <!-- Ghost large text -->
+  <text x="400" y="520"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="130"
+    fill="#C4846A"
+    opacity="0.04"
+    text-anchor="middle"
+    letter-spacing="8"
+    font-weight="700">CHIANTI</text>
+
+  <!-- CHIANTI text (prominent) -->
+  <text x="400" y="464"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="56"
+    fill="#E8C0A8"
+    text-anchor="middle"
+    letter-spacing="14"
+    font-weight="300">CHIANTI</text>
+
+  <!-- Tagline -->
+  <text x="400" y="500"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="9"
+    fill="#C4846A"
+    text-anchor="middle"
+    letter-spacing="4"
+    opacity="0.6">BOUTIQUE HOTEL · GREVE IN CHIANTI · 2023</text>
+
+  <!-- Small grape/vine dots -->
+  <g fill="#C4846A" opacity="0.3">
+    <circle cx="172" cy="148" r="2.5"/>
+    <circle cx="185" cy="140" r="2"/>
+    <circle cx="180" cy="155" r="2"/>
+    <circle cx="620" cy="148" r="2.5"/>
+    <circle cx="633" cy="140" r="2"/>
+    <circle cx="628" cy="155" r="2"/>
+  </g>
+
+  <!-- Vertical accent lines -->
+  <rect x="72" y="52" width="0.5" height="496" fill="#C4846A" opacity="0.08"/>
+  <rect x="727" y="52" width="0.5" height="496" fill="#C4846A" opacity="0.08"/>
+
+  <!-- ANNO badge -->
+  <text x="400" y="135"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="8"
+    fill="#C4846A"
+    text-anchor="middle"
+    letter-spacing="5"
+    opacity="0.5">EST. 2023</text>
+
+  <!-- Credit -->
+  <text x="748" y="565"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="7.5"
+    fill="#C4846A"
+    text-anchor="end"
+    letter-spacing="3"
+    opacity="0.25">PABROGI.COM</text>
+</svg>

@@ -1,0 +1,188 @@
+{
+	"nav": {
+		"about": "Chi sono",
+		"services": "Servizi",
+		"portfolio": "Portfolio",
+		"process": "Come lavoro",
+		"contact": "Contatto",
+		"cta": "Parliamo"
+	},
+	"hero": {
+		"badge": "Sviluppatore Web Freelance",
+		"title": "Siti web che",
+		"titleAccent": "accellerano",
+		"titleEnd": "la tua attività",
+		"subtitle": "Creo esperienze digitali premium per aziende e attività che vogliono distinguersi online e convertire visitatori in clienti.",
+		"ctaPrimary": "Vedi i miei lavori",
+		"ctaSecondary": "Parliamo del progetto",
+		"stat1Label": "Progetti consegnati",
+		"stat2Label": "Clienti soddisfatti",
+		"stat3Label": "Anni di esperienza",
+		"stat1": "30+",
+		"stat2": "25+",
+		"stat3": "3+"
+	},
+	"about": {
+		"badge": "Chi sono",
+		"title": "Sono Paolo,",
+		"titleAccent": "esiste solo ciò che si può cercare",
+		"description": "Il tuo sito è il biglietto da visita più visto al mondo. Progetto esperienze digitali che comunicano valore, costruiscono fiducia e trasformano visitatori in clienti.",
+		"description2": "Collaboro con aziende e professionisti che vogliono una presenza online all'altezza del loro business — non soluzioni generiche, ma identità digitali su misura.",
+		"skills": [
+			"UI/UX Design",
+			"React / Next.js",
+			"Performance",
+			"SEO",
+			"WordPress",
+			"E-commerce"
+		],
+		"yearsLabel": "Anni sul campo",
+		"projectsLabel": "Brand trasformati",
+		"clientsLabel": "Clienti che crescono"
+	},
+	"services": {
+		"badge": "Cosa faccio",
+		"title": "Servizi",
+		"titleAccent": "su misura",
+		"subtitle": "Ogni progetto è unico. Ecco come posso aiutarti a crescere online.",
+		"learnMore": "Scopri di più",
+		"items": [
+			{
+				"icon": "Palette",
+				"title": "Web Design",
+				"description": "Design moderni e professionali che riflettono l'identità del tuo brand e catturano l'attenzione dei visitatori al primo sguardo."
+			},
+			{
+				"icon": "Zap",
+				"title": "Sviluppo Web",
+				"description": "Siti veloci, sicuri e scalabili costruiti con le tecnologie più moderne per un'esperienza utente ottimale su ogni dispositivo."
+			},
+			{
+				"icon": "TrendingUp",
+				"title": "SEO & Performance",
+				"description": "Ottimizzazione per i motori di ricerca e velocità di caricamento per essere trovato dai tuoi clienti e aumentare il traffico."
+			},
+			{
+				"icon": "ShoppingCart",
+				"title": "E-commerce",
+				"description": "Negozi online professionali che convertono visitatori in clienti, con pagamenti sicuri e gestione semplice e intuitiva."
+			}
+		]
+	},
+	"portfolio": {
+		"badge": "Ispirazioni",
+		"title": "Portfolio",
+		"titleAccent": "ispirato",
+		"subtitle": "Alcuni dei progetti realizzati con passione, cura e attenzione ai risultati.",
+		"viewProject": "Vedi progetto →",
+		"allProjects": "Vedi tutti i progetti",
+		"projects": [
+			{
+				"title": "Gruppo Florence",
+				"tag": "Corporate · Luxury Fashion",
+				"year": "2024",
+				"url": "https://www.gruppoflorence.it/en/who-we-are/"
+			},
+			{
+				"title": "DS Service NCC",
+				"tag": "Transfer · Luxury · Milano",
+				"year": "2024",
+				"url": "https://www.dsservicencc.it/"
+			},
+			{
+				"title": "iQ Hotel Firenze",
+				"tag": "Hotel · Design · Firenze",
+				"year": "2024",
+				"url": "https://www.iqhotelfirenze.it/it"
+			},
+			{
+				"title": "La Taverna della Rocca",
+				"tag": "Ristorante · Prato · dal 1979",
+				"year": "2023",
+				"url": "https://latavernadellarocca.it/"
+			},
+			{
+				"title": "Villa Le Fontanelle",
+				"tag": "Hotel · Booking · Firenze",
+				"year": "2024",
+				"url": "https://villalefontanelle.com"
+			},
+			{
+				"title": "Villa Bordoni",
+				"tag": "Boutique Hotel · Chianti",
+				"year": "2023",
+				"url": "https://www.villabordoni.com"
+			}
+		]
+	},
+	"process": {
+		"badge": "Come lavoro",
+		"title": "Il mio",
+		"titleAccent": "processo",
+		"subtitle": "Un approccio strutturato e trasparente per risultati che superano le aspettative.",
+		"steps": [
+			{
+				"number": "01",
+				"title": "Scoperta",
+				"description": "Capisco la tua attività, i tuoi obiettivi e il tuo pubblico target. Iniziamo con una chiamata gratuita di 30 minuti."
+			},
+			{
+				"number": "02",
+				"title": "Strategia & Design",
+				"description": "Creo una strategia visiva unica e sviluppo il design del sito con la tua approvazione ad ogni step."
+			},
+			{
+				"number": "03",
+				"title": "Sviluppo",
+				"description": "Porto il design in vita con codice pulito, veloce e ottimizzato. Ti aggiorno costantemente sui progressi."
+			},
+			{
+				"number": "04",
+				"title": "Lancio & Supporto",
+				"description": "Pubblichiamo il sito e ti fornisco supporto continuo per assicurarmi che tutto funzioni perfettamente."
+			}
+		]
+	},
+	"contact": {
+		"badge": "Parliamo",
+		"title": "Prenota una call",
+		"titleAccent": "free",
+		"subtitle": "Hai un progetto in testa? 30 minuti di call gratuita possono cambiare il tuo business online.",
+		"form": {
+			"name": "Nome e cognome *",
+			"namePlaceholder": "Mario Rossi",
+			"email": "Email *",
+			"emailPlaceholder": "mario@esempio.it",
+			"phone": "Telefono",
+			"phonePlaceholder": "+39 333 000 0000",
+			"message": "Descrivi il tuo progetto *",
+			"messagePlaceholder": "Ciao Paolo! Ho bisogno di...",
+			"budget": "Budget indicativo",
+			"budgets": [
+				"< €500",
+				"€500 – €1.500",
+				"€1.500 – €3.000",
+				"> €3.000",
+				"Non so ancora"
+			],
+			"submit": "Invia messaggio",
+			"sending": "Invio in corso...",
+			"success": "Messaggio inviato! Ti rispondo entro 24 ore. 🎉",
+			"error": "Qualcosa è andato storto. Riprova o scrivimi direttamente."
+		},
+		"info": {
+			"emailLabel": "Email",
+			"emailValue": "paolotttbrogi@gmail.com",
+			"locationLabel": "Posizione",
+			"locationValue": "Italia · Florence · Remote worldwide",
+			"availabilityLabel": "Disponibilità",
+			"availabilityValue": "Aperto a nuovi progetti"
+		}
+	},
+	"footer": {
+		"tagline": "Creo siti web che fanno crescere le attività.",
+		"nav": "Navigazione",
+		"social": "Social",
+		"rights": "Tutti i diritti riservati."
+	}
+}

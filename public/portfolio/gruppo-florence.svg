@@ -1,0 +1,124 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E0B08"/>
+      <stop offset="60%" stop-color="#1A1510"/>
+      <stop offset="100%" stop-color="#0E0B08"/>
+    </linearGradient>
+    <linearGradient id="goldH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8C6A3A" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C9A96E" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#8C6A3A" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#C9A96E" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <!-- Center warm glow -->
+  <ellipse cx="400" cy="295" rx="320" ry="230" fill="url(#centerGlow)"/>
+
+  <!-- Side panels (darker) -->
+  <rect x="0" y="0" width="180" height="600" fill="#09070505" opacity="0.8"/>
+  <rect x="620" y="0" width="180" height="600" fill="#09070505" opacity="0.8"/>
+
+  <!-- Frame: outer border -->
+  <rect x="44" y="44" width="712" height="512" fill="none" stroke="#C9A96E" stroke-width="0.5" opacity="0.2"/>
+  <!-- Frame: inner border -->
+  <rect x="52" y="52" width="696" height="496" fill="none" stroke="#C9A96E" stroke-width="0.5" opacity="0.12"/>
+
+  <!-- Corner brackets — top-left -->
+  <polyline points="44,84 44,44 84,44" fill="none" stroke="#C9A96E" stroke-width="1.2" opacity="0.7"/>
+  <!-- Corner brackets — top-right -->
+  <polyline points="716,44 756,44 756,84" fill="none" stroke="#C9A96E" stroke-width="1.2" opacity="0.7"/>
+  <!-- Corner brackets — bottom-left -->
+  <polyline points="44,516 44,556 84,556" fill="none" stroke="#C9A96E" stroke-width="1.2" opacity="0.7"/>
+  <!-- Corner brackets — bottom-right -->
+  <polyline points="716,556 756,556 756,516" fill="none" stroke="#C9A96E" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- Ghost GF monogram -->
+  <text x="400" y="348"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="310"
+    fill="#C9A96E"
+    opacity="0.045"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    letter-spacing="-15">GF</text>
+
+  <!-- Top ornament: simplified Florentine lily geometry -->
+  <g transform="translate(400,108)" opacity="0.75" fill="none" stroke="#C9A96E" stroke-width="0.9">
+    <!-- Central petal -->
+    <path d="M0,-22 C-6,-14 -6,-4 0,0 C6,-4 6,-14 0,-22Z"/>
+    <!-- Left petal -->
+    <path d="M-14,-14 C-18,-8 -16,0 -10,2 C-8,-4 -6,-12 -14,-14Z"/>
+    <!-- Right petal -->
+    <path d="M14,-14 C18,-8 16,0 10,2 C8,-4 6,-12 14,-14Z"/>
+    <!-- Stem -->
+    <line x1="0" y1="0" x2="0" y2="16"/>
+    <!-- Crossbar -->
+    <line x1="-10" y1="7" x2="10" y2="7"/>
+  </g>
+  <!-- Lily dots -->
+  <circle cx="400" cy="83" r="2" fill="#C9A96E" opacity="0.8"/>
+  <circle cx="385" cy="91" r="1.5" fill="#C9A96E" opacity="0.6"/>
+  <circle cx="415" cy="91" r="1.5" fill="#C9A96E" opacity="0.6"/>
+
+  <!-- Horizontal rules -->
+  <rect x="140" y="202" width="520" height="0.6" fill="url(#goldH)" opacity="0.5"/>
+  <rect x="140" y="396" width="520" height="0.6" fill="url(#goldH)" opacity="0.5"/>
+
+  <!-- GRUPPO text -->
+  <text x="400" y="264"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="50"
+    fill="#E8D4B0"
+    text-anchor="middle"
+    letter-spacing="18"
+    font-weight="300">GRUPPO</text>
+
+  <!-- FLORENCE text -->
+  <text x="400" y="350"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="50"
+    fill="#E8D4B0"
+    text-anchor="middle"
+    letter-spacing="18"
+    font-weight="300">FLORENCE</text>
+
+  <!-- Tagline -->
+  <text x="400" y="426"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="9.5"
+    fill="#C9A96E"
+    text-anchor="middle"
+    letter-spacing="4"
+    opacity="0.65">LUXURY FASHION  ·  CORPORATE  ·  FIRENZE  ·  2024</text>
+
+  <!-- Decorative dot grid — bottom left -->
+  <g opacity="0.28" fill="#C9A96E">
+    <circle cx="92" cy="484" r="1.5"/><circle cx="106" cy="484" r="1.5"/><circle cx="120" cy="484" r="1.5"/>
+    <circle cx="92" cy="498" r="1.5"/><circle cx="106" cy="498" r="1.5"/><circle cx="120" cy="498" r="1.5"/>
+    <circle cx="92" cy="512" r="1.5"/><circle cx="106" cy="512" r="1.5"/><circle cx="120" cy="512" r="1.5"/>
+  </g>
+
+  <!-- Vertical accent lines -->
+  <rect x="72" y="52" width="0.5" height="496" fill="#C9A96E" opacity="0.1"/>
+  <rect x="727" y="52" width="0.5" height="496" fill="#C9A96E" opacity="0.1"/>
+
+  <!-- Credit -->
+  <text x="748" y="548"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="7.5"
+    fill="#C9A96E"
+    text-anchor="end"
+    letter-spacing="3"
+    opacity="0.25">PABROGI.COM</text>
+</svg>

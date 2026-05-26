@@ -1,0 +1,188 @@
+{
+	"nav": {
+		"about": "About",
+		"services": "Services",
+		"portfolio": "Portfolio",
+		"process": "Process",
+		"contact": "Contact",
+		"cta": "Let's talk"
+	},
+	"hero": {
+		"badge": "Freelance Web Developer",
+		"title": "Websites that",
+		"titleAccent": "accellerate",
+		"titleEnd": "your business",
+		"subtitle": "I create premium digital experiences for businesses that want to stand out online and turn visitors into customers.",
+		"ctaPrimary": "See my work",
+		"ctaSecondary": "Discuss a project",
+		"stat1Label": "Projects delivered",
+		"stat2Label": "Happy clients",
+		"stat3Label": "Years experience",
+		"stat1": "30+",
+		"stat2": "25+",
+		"stat3": "3+"
+	},
+	"about": {
+		"badge": "About me",
+		"title": "I'm Paolo,",
+		"titleAccent": "If they can't search you, you don't exist.",
+		"description": "Your website is your most-viewed business card. I design digital experiences that communicate value, build trust, and turn visitors into clients.",
+		"description2": "I work with businesses and professionals who want an online presence that matches the quality of their work — not off-the-shelf solutions, but tailored digital identities.",
+		"skills": [
+			"UI/UX Design",
+			"React / Next.js",
+			"Performance",
+			"SEO",
+			"WordPress",
+			"E-commerce"
+		],
+		"yearsLabel": "Years in the field",
+		"projectsLabel": "Brands transformed",
+		"clientsLabel": "Growing clients"
+	},
+	"services": {
+		"badge": "What I do",
+		"title": "Tailored",
+		"titleAccent": "services",
+		"subtitle": "Every project is unique. Here's how I can help you grow online.",
+		"learnMore": "Learn more",
+		"items": [
+			{
+				"icon": "Palette",
+				"title": "Web Design",
+				"description": "Modern and professional designs that reflect your brand identity and capture visitor attention from the very first glance."
+			},
+			{
+				"icon": "Zap",
+				"title": "Web Development",
+				"description": "Fast, secure, and scalable websites built with modern technologies for an optimal user experience on every device."
+			},
+			{
+				"icon": "TrendingUp",
+				"title": "SEO & Performance",
+				"description": "Search engine optimization and loading speed improvements to be found by your customers and increase traffic."
+			},
+			{
+				"icon": "ShoppingCart",
+				"title": "E-commerce",
+				"description": "Professional online stores that convert visitors into customers, with secure payments and easy, intuitive management."
+			}
+		]
+	},
+	"portfolio": {
+		"badge": "Inspirations",
+		"title": "Inspired",
+		"titleAccent": "portfolio",
+		"subtitle": "Some of the projects crafted with passion, care, and a focus on results.",
+		"viewProject": "View project →",
+		"allProjects": "See all projects",
+		"projects": [
+			{
+				"title": "Gruppo Florence",
+				"tag": "Corporate · Luxury Fashion",
+				"year": "2024",
+				"url": "https://www.gruppoflorence.it/en/who-we-are/"
+			},
+			{
+				"title": "DS Service NCC",
+				"tag": "Transfer · Luxury · Milan",
+				"year": "2024",
+				"url": "https://www.dsservicencc.it/"
+			},
+			{
+				"title": "iQ Hotel Firenze",
+				"tag": "Hotel · Design · Florence",
+				"year": "2024",
+				"url": "https://www.iqhotelfirenze.it/it"
+			},
+			{
+				"title": "La Taverna della Rocca",
+				"tag": "Restaurant · Prato · since 1979",
+				"year": "2023",
+				"url": "https://latavernadellarocca.it/"
+			},
+			{
+				"title": "Villa Le Fontanelle",
+				"tag": "Hotel · Booking · Florence",
+				"year": "2024",
+				"url": "https://villalefontanelle.com"
+			},
+			{
+				"title": "Villa Bordoni",
+				"tag": "Boutique Hotel · Chianti",
+				"year": "2023",
+				"url": "https://www.villabordoni.com"
+			}
+		]
+	},
+	"process": {
+		"badge": "How I work",
+		"title": "My",
+		"titleAccent": "process",
+		"subtitle": "A structured and transparent approach for results that exceed expectations.",
+		"steps": [
+			{
+				"number": "01",
+				"title": "Discovery",
+				"description": "I understand your business, goals, and target audience. We start with a free 30-minute call."
+			},
+			{
+				"number": "02",
+				"title": "Strategy & Design",
+				"description": "I create a unique visual strategy and develop the site design with your approval at every step."
+			},
+			{
+				"number": "03",
+				"title": "Development",
+				"description": "I bring the design to life with clean, fast, and optimized code. I keep you updated on progress."
+			},
+			{
+				"number": "04",
+				"title": "Launch & Support",
+				"description": "We publish the site and I provide ongoing support to make sure everything works perfectly."
+			}
+		]
+	},
+	"contact": {
+		"badge": "Let's talk",
+		"title": "Book a free",
+		"titleAccent": "call",
+		"subtitle": "Got a project in mind? A free 30-minute call could change your online business forever.",
+		"form": {
+			"name": "Full name *",
+			"namePlaceholder": "John Smith",
+			"email": "Email *",
+			"emailPlaceholder": "marialorena@example.com",
+			"phone": "Phone",
+			"phonePlaceholder": "+1 555 000 0000",
+			"message": "Describe your project *",
+			"messagePlaceholder": "Hi Paolo! I need...",
+			"budget": "Estimated budget",
+			"budgets": [
+				"< €500",
+				"€500 – €1,500",
+				"€1,500 – €3,000",
+				"> €3,000",
+				"Not sure yet"
+			],
+			"submit": "Send message",
+			"sending": "Sending...",
+			"success": "Message sent! I'll reply within 24 hours. 🎉",
+			"error": "Something went wrong. Try again or write me directly."
+		},
+		"info": {
+			"emailLabel": "Email",
+			"emailValue": "paolotttbrogi@gmail.com",
+			"locationLabel": "Location",
+			"locationValue": "Italy · Remote worldwide",
+			"availabilityLabel": "Availability",
+			"availabilityValue": "Open to new projects"
+		}
+	},
+	"footer": {
+		"tagline": "I build websites that grow businesses.",
+		"nav": "Navigation",
+		"social": "Social",
+		"rights": "All rights reserved."
+	}
+}
