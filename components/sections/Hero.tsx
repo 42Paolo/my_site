@@ -122,6 +122,7 @@ export default function Hero() {
 						opacity: rocketOpacityMobile,
 						x: "-50%",
 						marginTop: "-92%",
+						willChange: "transform, opacity",
 					}}
 				>
 					<motion.div
@@ -129,10 +130,8 @@ export default function Hero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={prefersReduced ? { duration: 0 } : { duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
 					>
-						<motion.div
-							animate={prefersReduced ? {} : { y: [0, -18, 0] }}
-							transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-						>
+						{/* Float disabilitato su mobile: evita conflitto tra y scroll-linked e y float */}
+						<div>
 							<Image
 								src="/rocket.png"
 								alt=""
@@ -146,7 +145,7 @@ export default function Hero() {
 								}}
 								priority
 							/>
-						</motion.div>
+						</div>
 					</motion.div>
 				</motion.div>
 
