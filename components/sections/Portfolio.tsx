@@ -170,7 +170,7 @@ export default function Portfolio() {
 							           text-sm tracking-[0.08em]"
 						>
 							<span className="text-xl leading-none tracking-[0.3em]" aria-hidden="true">···</span>
-							<span>{t.portfolio.allProjects}</span>
+							<span>{t.portfolio.expandProjects}</span>
 						</button>
 					</motion.div>
 				)}
