@@ -50,17 +50,17 @@
 			{
 				"icon": "Palette",
 				"title": "Design",
-				"description": "Interfaces designed around your brand positioning, not generic trends. Typography, visual hierarchy and details built to communicate value at first glance."
+				"description": "A visual identity built to stay top of mind. After the first encounter — a recommendation, an ad, a search — design is what makes them type your name into Google next time, not a competitor's."
 			},
 			{
 				"icon": "Zap",
 				"title": "Development",
-				"description": "Sites built with modern frameworks and hand-written code. Real performance, simple maintenance, reliable infrastructure that won't leave you stuck six months down the line."
+				"description": "The technical foundation Google can actually read. Clean code, fast loading, mobile-first structure: the three factors that decide whether your site gets properly indexed and rewarded in results, or ignored."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "Technical optimisation for search engines and real users. Semantic structure, Core Web Vitals in the green, content calibrated to your sector's actual searches."
+				"description": "The work that puts your site among the top results for your sector's searches. Keyword analysis, technical optimisation, Core Web Vitals in the green: every detail calibrated so the people looking for your services find you before the competition."
 			},
 			{
 				"icon": "MapPin",

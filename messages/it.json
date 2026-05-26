@@ -50,17 +50,17 @@
 			{
 				"icon": "Palette",
 				"title": "Design",
-				"description": "Interfacce progettate sul posizionamento del tuo brand, non su tendenze generiche. Tipografia, gerarchia visiva e dettagli costruiti per comunicare valore al primo sguardo."
+				"description": "Un'identità visiva costruita per restare in mente. Quando un cliente ti incontra una volta — un consiglio, un annuncio, una ricerca — il design fa sì che la volta dopo sia il tuo nome a venire cercato, non quello di un competitor."
 			},
 			{
 				"icon": "Zap",
 				"title": "Sviluppo",
-				"description": "Siti costruiti con framework moderni e codice scritto a mano. Performance reali, manutenzione semplice, infrastruttura affidabile che non ti lascia bloccato dopo sei mesi."
+				"description": "La base tecnica che Google sa leggere. Codice pulito, velocità di caricamento, struttura mobile-first: i tre fattori che decidono se il tuo sito viene indicizzato bene e premiato nei risultati, o ignorato."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "Ottimizzazione tecnica per i motori di ricerca e per gli utenti reali. Struttura semantica, Core Web Vitals al verde, contenuti calibrati sulle ricerche del tuo settore."
+				"description": "Il lavoro che porta il sito tra i primi risultati per le ricerche del tuo settore. Analisi delle parole chiave, ottimizzazione tecnica, Core Web Vitals al verde: tutto calibrato perché chi cerca i tuoi servizi ti trovi prima della concorrenza."
 			},
 			{
 				"icon": "MapPin",
