@@ -50,22 +50,22 @@
 			{
 				"icon": "Palette",
 				"title": "Web Design",
-				"description": "Design moderni e professionali che riflettono l'identità del tuo brand e catturano l'attenzione dei visitatori al primo sguardo."
+				"description": "Interfacce curate nei dettagli, coerenti con l'identità del brand e progettate per trasmettere professionalità e fiducia al primo sguardo."
 			},
 			{
 				"icon": "Zap",
 				"title": "Sviluppo Web",
-				"description": "Siti veloci, sicuri e scalabili costruiti con le tecnologie più moderne per un'esperienza utente ottimale su ogni dispositivo."
+				"description": "Siti veloci, sicuri e scalabili realizzati con tecnologie consolidate, ottimizzati per le performance e pronti a crescere con il tuo business."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "Ottimizzazione per i motori di ricerca e velocità di caricamento per essere trovato dai tuoi clienti e aumentare il traffico."
+				"description": "Struttura tecnica e contenuti ottimizzati per i motori di ricerca, con monitoraggio dei risultati e miglioramento continuo della visibilità online."
 			},
 			{
 				"icon": "ShoppingCart",
 				"title": "E-commerce",
-				"description": "Negozi online professionali che convertono visitatori in clienti, con pagamenti sicuri e gestione semplice e intuitiva."
+				"description": "Soluzioni di vendita online complete con pagamenti certificati, gestione intuitiva del catalogo e un'esperienza d'acquisto pensata per fidelizzare."
 			}
 		]
 	},
@@ -125,22 +125,22 @@
 			{
 				"number": "01",
 				"title": "Scoperta",
-				"description": "Capisco la tua attività, i tuoi obiettivi e il tuo pubblico target. Iniziamo con una chiamata gratuita di 30 minuti."
+				"description": "Analizziamo insieme gli obiettivi del progetto, il settore di riferimento e i punti di forza della tua attività. Si parte con una consulenza gratuita, senza impegno."
 			},
 			{
 				"number": "02",
 				"title": "Strategia & Design",
-				"description": "Creo una strategia visiva unica e sviluppo il design del sito con la tua approvazione ad ogni step."
+				"description": "Definisco la strategia visiva e presento il design completo prima di procedere. Ogni proposta viene condivisa e approvata insieme, per un risultato che rispecchi davvero il tuo brand."
 			},
 			{
 				"number": "03",
 				"title": "Sviluppo",
-				"description": "Porto il design in vita con codice pulito, veloce e ottimizzato. Ti aggiorno costantemente sui progressi."
+				"description": "Realizzo il progetto con codice performante, sicuro e ottimizzato per ogni dispositivo. Ricevi aggiornamenti costanti durante tutto il processo, senza sorprese."
 			},
 			{
 				"number": "04",
 				"title": "Lancio & Supporto",
-				"description": "Pubblichiamo il sito e ti fornisco supporto continuo per assicurarmi che tutto funzioni perfettamente."
+				"description": "Il sito viene pubblicato dopo test tecnici approfonditi. Resto disponibile per assistenza, aggiornamenti e supporto anche dopo il go-live."
 			}
 		]
 	},
