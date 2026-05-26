@@ -112,21 +112,22 @@ export default function Services() {
                                      tracking-[-0.02em] text-[var(--text)] block leading-tight mb-1" style={{ fontFamily: "'Syne', sans-serif" }}>
                       {service.title}
                     </span>
-                    {/* Description — always visible on mobile, visible on hover desktop */}
-                    <AnimatePresence mode="wait">
-                      {isOpen && (
-                        <motion.p
-                          initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                          animate={{ opacity: 1, height: "auto", marginTop: 8 }}
-                          exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                          className="font-body text-sm text-[var(--text-2)] leading-relaxed
-                                     max-w-xl overflow-hidden"
-                        >
-                          {service.description}
-                        </motion.p>
-                      )}
-                    </AnimatePresence>
+                    {/* Description — hover reveal on desktop only */}
+                    <div className="hidden md:block">
+                      <AnimatePresence mode="wait">
+                        {isOpen && (
+                          <motion.p
+                            initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                            animate={{ opacity: 1, height: "auto", marginTop: 8 }}
+                            exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                            className="font-body text-sm text-[var(--text-2)] leading-relaxed max-w-xl overflow-hidden"
+                          >
+                            {service.description}
+                          </motion.p>
+                        )}
+                      </AnimatePresence>
+                    </div>
                     {/* Always-on description on mobile */}
                     <p className="md:hidden font-body text-xs text-[var(--text-2)] leading-relaxed mt-2">
                       {service.description}
