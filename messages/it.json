@@ -50,22 +50,22 @@
 			{
 				"icon": "Palette",
 				"title": "Design",
-				"description": "Mi occupo dell'aspetto visivo del sito: colori, font, immagini, disposizione dei contenuti. L'obiettivo è che sia coerente con la tua attività, leggibile su qualsiasi schermo e che chi arriva capisca subito di cosa ti occupi."
+				"description": "Il design non è decorazione — è il primo argomento di vendita del tuo sito. Colori, tipografia, composizione e gerarchia visiva vengono studiati per comunicare credibilità al primo sguardo, guidare l'utente verso l'azione che conta e funzionare su qualsiasi dispositivo."
 			},
 			{
 				"icon": "Zap",
 				"title": "Sviluppo",
-				"description": "Costruisco il sito da zero, scrivendo il codice riga per riga. Niente plugin assemblati o template pre-confezionati: ogni componente è pensato per il tuo sito, veloce da caricare e facile da modificare anche tra un anno."
+				"description": "Niente template pre-assemblati, niente plugin di terze parti inutili. Ogni sito viene costruito su architetture moderne, con performance misurabili e codice manutenibile nel tempo — senza dipendenze nascoste o costi imprevisti tra un anno."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "Configuro il sito perché Google possa leggerlo e indicizzarlo correttamente: tag, meta description, sitemap, ottimizzazione delle immagini. È la base tecnica per apparire nelle ricerche — non posso promettere il primo posto, ma posso garantire che la struttura sia fatta come si deve."
+				"description": "La visibilità organica si costruisce prima ancora di pubblicare il sito. Struttura semantica, velocità, metadati, dati strutturati e architettura delle URL vengono ottimizzati dall'inizio — così Google legge, comprende e posiziona il sito nelle ricerche che contano per il tuo business."
 			},
 			{
 				"icon": "MapPin",
 				"title": "Google & Local",
-				"description": "Profilo Google Business ottimizzato, visibilità su Maps e ricerca locale. Per studi professionali e PMI che operano sul territorio: essere trovati esattamente dove e quando il cliente cerca."
+				"description": "Per chi opera sul territorio, Google Business Profile è spesso il primo contatto con il cliente. Ottimizzazione sistematica delle informazioni, categorie, foto e recensioni — così il tuo profilo appare nelle ricerche locali nel momento esatto in cui qualcuno sta cercando quello che fai."
 			}
 		]
 	},

@@ -50,22 +50,22 @@
 			{
 				"icon": "Palette",
 				"title": "Design",
-				"description": "I handle the visual side of the site: colours, fonts, images, how content is laid out. The goal is for it to be consistent with your business, readable on any screen, and clear at first glance about what you do."
+				"description": "Design isn't decoration — it's your site's first sales argument. Color, typography, layout and visual hierarchy are crafted to convey credibility at a glance, guide users toward the action that matters, and perform flawlessly on any device."
 			},
 			{
 				"icon": "Zap",
 				"title": "Development",
-				"description": "I build the site from scratch, writing the code line by line. No assembled plugins or pre-made templates: every component is designed for your site, fast to load, and easy to modify even a year from now."
+				"description": "No pre-assembled templates, no unnecessary third-party plugins. Every site is built on modern architectures with measurable performance and maintainable code — no hidden dependencies or unexpected costs a year from now."
 			},
 			{
 				"icon": "TrendingUp",
 				"title": "SEO & Performance",
-				"description": "I configure the site so Google can read and index it properly: tags, meta descriptions, sitemap, image optimisation. It's the technical foundation to appear in searches — I can't promise the top spot, but I can guarantee the structure is built the right way."
+				"description": "Organic visibility is built before the site goes live. Semantic structure, speed, metadata, structured data and URL architecture are optimized from the start — so Google reads, understands, and ranks the site in the searches that matter for your business."
 			},
 			{
 				"icon": "MapPin",
 				"title": "Google & Local",
-				"description": "Optimised Google Business Profile, visibility on Maps and local search. For professionals and SMEs operating on the ground: being found exactly where and when the client is looking."
+				"description": "For businesses operating locally, Google Business Profile is often the first touchpoint with a client. Systematic optimization of information, categories, photos and reviews — so your profile appears in local searches at the exact moment someone is looking for what you do."
 			}
 		]
 	},
