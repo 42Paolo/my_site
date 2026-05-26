@@ -3,9 +3,8 @@
 import { useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
-import Button from "@/components/ui/Button";
 import Image from "next/image";
 
 /* Project card data — image + shadow per card */
@@ -19,6 +18,7 @@ const projectCards = [
 ];
 
 const MOBILE_LIMIT = 2;
+const CYCLE_COLORS = ["#FF781E", "#16AEEF", "#5DC264", "#946BE1", "#FF781E"];
 
 export default function Portfolio() {
 	const { t } = useLang();
@@ -177,16 +177,59 @@ export default function Portfolio() {
 					</motion.div>
 				)}
 
-				{/* CTA desktop */}
+				{/* CTA desktop — editorial */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
 					transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.5, delay: 0.7 }}
-					className="text-center mt-12 hidden md:block"
+					className="hidden md:flex justify-center mt-20"
 				>
-					<Button href="#contatto" variant="outline" size="lg">
-						{t.portfolio.allProjects}
-					</Button>
+					<motion.a
+						href="#contatto"
+						className="group inline-flex items-center gap-6 relative pb-3"
+						whileHover={{ x: 6 }}
+						transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+					>
+						{/* Cycling color dot */}
+						<motion.span
+							className="block w-3 h-3 rounded-full shrink-0"
+							animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
+							transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+						/>
+						{/* Editorial text */}
+						<span
+							className="font-700 tracking-[-0.02em] text-[var(--text)] leading-none"
+							style={{
+								fontFamily: "'Syne', sans-serif",
+								fontSize: "clamp(2rem, 3.5vw, 3rem)",
+							}}
+						>
+							{t.portfolio.allProjects}
+						</span>
+						{/* Animated arrow circle */}
+						<motion.span
+							className="relative w-14 h-14 rounded-full flex items-center justify-center shrink-0 overflow-hidden"
+							animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
+							transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+						>
+							<ArrowRight
+								size={22}
+								strokeWidth={2}
+								className="text-white transition-transform duration-400 group-hover:translate-x-1"
+							/>
+						</motion.span>
+						{/* Animated underline */}
+						<motion.span
+							aria-hidden
+							className="absolute left-9 right-16 bottom-0 h-px"
+							style={{
+								background: "linear-gradient(90deg, #FF781E, #16AEEF, #5DC264, #946BE1)",
+								backgroundSize: "300% 100%",
+							}}
+							animate={prefersReduced ? {} : { backgroundPosition: ["0% 50%", "100% 50%"] }}
+							transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+						/>
+					</motion.a>
 				</motion.div>
 
 				{/* CTA mobile — after expand */}
@@ -195,11 +238,44 @@ export default function Portfolio() {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.4 }}
-						className="md:hidden text-center mt-10"
+						className="md:hidden flex justify-center mt-14"
 					>
-						<Button href="#contatto" variant="outline" size="lg">
-							{t.portfolio.allProjects}
-						</Button>
+						<motion.a
+							href="#contatto"
+							className="group inline-flex items-center gap-4 relative pb-2"
+						>
+							<motion.span
+								className="block w-2.5 h-2.5 rounded-full shrink-0"
+								animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
+								transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+							/>
+							<span
+								className="font-700 tracking-[-0.02em] text-[var(--text)] leading-none"
+								style={{
+									fontFamily: "'Syne', sans-serif",
+									fontSize: "clamp(1.5rem, 6vw, 2rem)",
+								}}
+							>
+								{t.portfolio.allProjects}
+							</span>
+							<motion.span
+								className="relative w-11 h-11 rounded-full flex items-center justify-center shrink-0 overflow-hidden"
+								animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
+								transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+							>
+								<ArrowRight size={18} strokeWidth={2} className="text-white" />
+							</motion.span>
+							<motion.span
+								aria-hidden
+								className="absolute left-7 right-13 bottom-0 h-px"
+								style={{
+									background: "linear-gradient(90deg, #FF781E, #16AEEF, #5DC264, #946BE1)",
+									backgroundSize: "300% 100%",
+								}}
+								animate={prefersReduced ? {} : { backgroundPosition: ["0% 50%", "100% 50%"] }}
+								transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+							/>
+						</motion.a>
 					</motion.div>
 				)}
 			</div>
