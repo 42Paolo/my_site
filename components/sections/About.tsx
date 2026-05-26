@@ -338,20 +338,20 @@ export default function About() {
 				</div>
 
 				<div className="relative z-10 flex flex-col justify-center h-full">
-				<div ref={ref} className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 py-16 w-full">
+				<div ref={ref} className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 py-6 lg:py-16 w-full">
 					{/* ── Badge ── */}
 					<motion.p
 						initial={{ opacity: 0, x: -20 }}
 						animate={inView ? { opacity: 1, x: 0 } : {}}
 						transition={{ duration: 0.5 }}
 						className="font-display font-500 text-xs tracking-[0.22em] uppercase
-						           text-[var(--text-3)] flex items-center gap-3 mb-16"
+						           text-[var(--text-3)] flex items-center gap-3 mb-6 lg:mb-16"
 					>
 						<span className="w-6 h-px bg-current" />
 						{t.about.badge}
 					</motion.p>
 
-					<div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 lg:gap-24 items-start">
+					<div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-6 lg:gap-24 items-start">
 
 						{/* ── Left — stats ── */}
 						<div className="flex flex-col gap-0">
@@ -363,7 +363,7 @@ export default function About() {
 										initial={{ opacity: 0, x: -90 }}
 										animate={inView ? { opacity: 1, x: 0 } : {}}
 										transition={{ duration: 0.8, delay: 0.05 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-										className={`flex flex-col py-8 ${i < 2 ? "border-b border-[var(--border)]" : ""}`}
+										className={`flex flex-col py-4 lg:py-8 ${i < 2 ? "border-b border-[var(--border)]" : ""}`}
 									>
 										<span
 											className="font-700 leading-none block"
@@ -405,7 +405,7 @@ export default function About() {
 								initial={{ opacity: 0, x: 80 }}
 								animate={inView ? { opacity: 1, x: 0 } : {}}
 								transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-								className="font-700 leading-[0.94] tracking-[-0.03em] mb-10"
+								className="font-700 leading-[0.94] tracking-[-0.03em] mb-4 lg:mb-10"
 								style={{ fontSize: "clamp(2.2rem, 5vw, 4.5rem)", fontFamily: "'Integral CF', var(--font-display), sans-serif" }}
 							>
 								{titleParts[0]}
