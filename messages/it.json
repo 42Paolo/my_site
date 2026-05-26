@@ -49,12 +49,12 @@
 		"items": [
 			{
 				"icon": "Palette",
-				"title": "Web Design",
+				"title": "Design",
 				"description": "Interfacce progettate sul posizionamento del tuo brand, non su tendenze generiche. Tipografia, gerarchia visiva e dettagli costruiti per comunicare valore al primo sguardo."
 			},
 			{
 				"icon": "Zap",
-				"title": "Sviluppo Web",
+				"title": "Sviluppo",
 				"description": "Siti costruiti con framework moderni e codice scritto a mano. Performance reali, manutenzione semplice, infrastruttura affidabile che non ti lascia bloccato dopo sei mesi."
 			},
 			{
@@ -63,9 +63,9 @@
 				"description": "Ottimizzazione tecnica per i motori di ricerca e per gli utenti reali. Struttura semantica, Core Web Vitals al verde, contenuti calibrati sulle ricerche del tuo settore."
 			},
 			{
-				"icon": "ShoppingCart",
-				"title": "E-commerce",
-				"description": "Negozi online costruiti per vendere, non solo per esistere. Flusso d'acquisto ottimizzato, integrazioni con i gestionali esistenti, infrastruttura pronta a scalare quando l'attività cresce."
+				"icon": "MapPin",
+				"title": "Google & Local",
+				"description": "Profilo Google Business ottimizzato, visibilità su Maps e ricerca locale. Per studi professionali e PMI che operano sul territorio: essere trovati esattamente dove e quando il cliente cerca."
 			}
 		]
 	},
