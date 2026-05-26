@@ -122,7 +122,7 @@ export default function Hero() {
 						zIndex: 1,
 						opacity: rocketOpacityMobile,
 						x: "-50%",
-						marginTop: "-92%",
+						marginTop: "-44vh",
 					}}
 				>
 					<motion.div
