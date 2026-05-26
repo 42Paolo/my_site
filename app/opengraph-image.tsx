@@ -8,7 +8,7 @@ export const contentType = "image/png";
 
 export default async function Image() {
 	const integralCF = readFileSync(
-		path.join(process.cwd(), "public/fonts/integral-cf-bold.woff2")
+		path.join(process.cwd(), "public/fonts/bebas-neue.ttf")
 	);
 
 	return new ImageResponse(
@@ -73,7 +73,7 @@ export default async function Image() {
 						style={{
 							color: "#FF781E",
 							fontSize: 20,
-							fontFamily: "Integral CF",
+							fontFamily: "Bebas Neue",
 							letterSpacing: "0.06em",
 							fontWeight: 700,
 						}}
@@ -115,7 +115,7 @@ export default async function Image() {
 					<div
 						style={{
 							fontSize: 152,
-							fontFamily: "Integral CF",
+							fontFamily: "Bebas Neue",
 							fontWeight: 700,
 							color: "#E8F0FF",
 							letterSpacing: "-0.045em",
@@ -217,7 +217,7 @@ export default async function Image() {
 			...size,
 			fonts: [
 				{
-					name: "Integral CF",
+					name: "Bebas Neue",
 					data: integralCF,
 					style: "normal",
 					weight: 700,
