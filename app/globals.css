@@ -161,6 +161,12 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+@media (min-width: 1024px) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
 body {
   cursor: none;
   background-color: var(--bg);
