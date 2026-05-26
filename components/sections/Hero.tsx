@@ -111,7 +111,7 @@ export default function Hero() {
 		<section
 			ref={sectionRef}
 			className="relative bg-[var(--bg)]"
-			style={{ height: mobileVH ? `${mobileVH * 1.95}px` : "195vh" }}
+			style={{ height: mobileVH ? `${mobileVH}px` : "195vh" }}
 			aria-label="Hero"
 		>
 			<div
