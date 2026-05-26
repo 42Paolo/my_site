@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { ExternalLink } from "lucide-react";
@@ -8,6 +8,7 @@ import { useLang } from "@/context/LanguageContext";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 
+/* Project card data — image + shadow per card */
 const projectCards = [
   { img: "/portfolio/gruppo-florence.svg",    shadow: "rgba(180,140,60,0.35)"   },
   { img: "/portfolio/ds-service-ncc.svg",     shadow: "rgba(22,174,239,0.35)"   },
@@ -17,7 +18,7 @@ const projectCards = [
   { img: "/portfolio/villa-bordoni.svg",      shadow: "rgba(196,132,106,0.35)"  },
 ];
 
-const CYCLE_COLORS = ["#FF781E", "#16AEEF", "#5DC264", "#946BE1", "#FF781E"];
+const MOBILE_LIMIT = 2;
 
 export default function Portfolio() {
 	const { t } = useLang();
@@ -25,6 +26,7 @@ export default function Portfolio() {
 	const inView = useInView(ref, { once: true, margin: "-80px" });
 	const prefersReduced = useReducedMotion();
 	const isMobile = useIsMobile();
+	const [showAll, setShowAll] = useState(false);
 
 	return (
 		<section
@@ -33,7 +35,7 @@ export default function Portfolio() {
 			className="section-padding bg-[var(--bg-2)] relative overflow-hidden"
 		>
 			<div ref={ref} className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16">
-				{/* Header */}
+				{/* Header — editorial */}
 				<div className="mb-14">
 					<motion.p
 						initial={{ opacity: 0, x: -20 }}
@@ -70,13 +72,14 @@ export default function Portfolio() {
 					</div>
 				</div>
 
-				{/* Grid — all projects always visible */}
+				{/* Grid */}
 				<div
 					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
 					role="list"
 				>
 					{t.portfolio.projects.map((project, i) => {
 						const url = (project as typeof project & { url?: string }).url;
+						const isHiddenOnMobile = !showAll && i >= MOBILE_LIMIT;
 
 						return (
 							<motion.a
@@ -92,8 +95,9 @@ export default function Portfolio() {
 									? { duration: 0 }
 									: { duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }
 								}
-								className="group relative rounded-3xl overflow-hidden aspect-[4/3] cursor-pointer
-                         hover:-translate-y-3 transition-all duration-400 block"
+								className={`group relative rounded-3xl overflow-hidden aspect-[4/3] cursor-pointer
+                         hover:-translate-y-3 transition-all duration-400
+                         ${isHiddenOnMobile ? "hidden md:block" : "block"}`}
 								style={{
 									boxShadow: `0 8px 32px ${projectCards[i].shadow}`,
 								}}
@@ -138,7 +142,7 @@ export default function Portfolio() {
 									</div>
 								</div>
 
-								{/* Title always visible on mobile */}
+								{/* Title visible always on mobile */}
 								<div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t
                               from-espresso/80 to-transparent md:group-hover:opacity-0
                               transition-opacity duration-300 md:opacity-0 opacity-100">
@@ -150,38 +154,28 @@ export default function Portfolio() {
 					})}
 				</div>
 
-				{/* Mobile expand button — always open, looping color animation */}
-				<motion.div
-					initial={{ opacity: 0, y: 10 }}
-					animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
-					transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.4, delay: 0.3 }}
-					className="md:hidden mt-8 flex justify-center"
-				>
+				{/* Mobile expand button */}
+				{!showAll && (
 					<motion.div
-						animate={prefersReduced ? {} : {
-							borderColor: CYCLE_COLORS,
-							color: CYCLE_COLORS,
-						}}
-						transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-						className="flex items-center gap-3 px-6 py-3.5 rounded-full
-						           border font-display font-600 text-sm tracking-[0.08em]"
+						initial={{ opacity: 0, y: 10 }}
+						animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+						transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.4, delay: 0.3 }}
+						className="md:hidden mt-8 flex justify-center"
 					>
-						<span className="text-xl leading-none tracking-[0.3em]" aria-hidden="true">···</span>
-						<span>{t.portfolio.expandProjects}</span>
+						<button
+							onClick={() => setShowAll(true)}
+							aria-label={`Mostra tutti i ${t.portfolio.projects.length} progetti`}
+							className="flex items-center gap-3 px-6 py-3.5 rounded-full
+							           border border-[var(--border-strong)] text-[var(--text-2)]
+							           hover:border-solar hover:text-solar active:scale-95
+							           transition-all duration-300 font-display font-600
+							           text-sm tracking-[0.08em]"
+						>
+							<span className="text-xl leading-none tracking-[0.3em]" aria-hidden="true">···</span>
+							<span>{t.portfolio.expandProjects}</span>
+						</button>
 					</motion.div>
-				</motion.div>
-
-				{/* CTA mobile */}
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
-					transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.4, delay: 0.5 }}
-					className="md:hidden text-center mt-10"
-				>
-					<Button href="#contatto" variant="outline" size="lg">
-						{t.portfolio.allProjects}
-					</Button>
-				</motion.div>
+				)}
 
 				{/* CTA desktop */}
 				<motion.div
@@ -194,6 +188,20 @@ export default function Portfolio() {
 						{t.portfolio.allProjects}
 					</Button>
 				</motion.div>
+
+				{/* CTA mobile — after expand */}
+				{showAll && (
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.4 }}
+						className="md:hidden text-center mt-10"
+					>
+						<Button href="#contatto" variant="outline" size="lg">
+							{t.portfolio.allProjects}
+						</Button>
+					</motion.div>
+				)}
 			</div>
 		</section>
 	);

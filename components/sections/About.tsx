@@ -575,14 +575,11 @@ export default function About() {
 							>
 								<motion.a
 									href="#portfolio"
-									onHoverStart={() => setCtaHovered(true)}
-									onHoverEnd={() => setCtaHovered(false)}
 									style={{ display: "inline-flex", alignItems: "center", cursor: "pointer", textDecoration: "none" }}
 								>
-									<motion.div
-										animate={{ width: (isMobile || ctaHovered) ? 290 : 56 }}
-										transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+									<div
 										style={{
+											width: 290,
 											height: 52,
 											overflow: "hidden",
 											display: "flex",
@@ -590,27 +587,21 @@ export default function About() {
 											position: "relative",
 											border: "1px solid #39FF14",
 											clipPath: "polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px)",
-											boxShadow: (isMobile || ctaHovered)
-												? "0 0 22px rgba(57,255,20,0.35), inset 0 0 18px rgba(57,255,20,0.07)"
-												: "0 0 8px rgba(57,255,20,0.15)",
-											transition: "box-shadow 0.3s",
+											boxShadow: "0 0 22px rgba(57,255,20,0.35), inset 0 0 18px rgba(57,255,20,0.07)",
 										}}
 									>
-										{/* Scan line */}
-										{ctaHovered && (
-											<motion.div
-												initial={{ x: "-100%" }}
-												animate={{ x: "400%" }}
-												transition={{ duration: 0.55, ease: "linear" }}
-												style={{
-													position: "absolute",
-													top: 0, bottom: 0,
-													width: "30%",
-													background: "linear-gradient(90deg, transparent, rgba(57,255,20,0.18), transparent)",
-													pointerEvents: "none",
-												}}
-											/>
-										)}
+										{/* Scan line in loop */}
+										<motion.div
+											animate={{ x: ["-100%", "400%"] }}
+											transition={{ duration: 1.8, ease: "linear", repeat: Infinity, repeatDelay: 1.2 }}
+											style={{
+												position: "absolute",
+												top: 0, bottom: 0,
+												width: "30%",
+												background: "linear-gradient(90deg, transparent, rgba(57,255,20,0.18), transparent)",
+												pointerEvents: "none",
+											}}
+										/>
 										{/* Arrow icon */}
 										<span style={{
 											minWidth: 56,
@@ -623,9 +614,7 @@ export default function About() {
 											flexShrink: 0,
 										}}>▶</span>
 										{/* Text */}
-										<motion.span
-											animate={{ opacity: (isMobile || ctaHovered) ? 1 : 0, x: (isMobile || ctaHovered) ? 0 : -16 }}
-											transition={{ duration: 0.25, delay: ctaHovered ? 0.18 : 0 }}
+										<span
 											style={{
 												fontFamily: "'Integral CF', sans-serif",
 												fontSize: 11,
@@ -636,8 +625,8 @@ export default function About() {
 											}}
 										>
 											WATCH MY PROJECTS
-										</motion.span>
-									</motion.div>
+										</span>
+									</div>
 								</motion.a>
 							</motion.div>
 						</div>
@@ -686,13 +675,11 @@ export default function About() {
 				>
 					<motion.a
 						href="#portfolio"
-						onHoverStart={() => setCtaHovered(true)}
-						onHoverEnd={() => setCtaHovered(false)}
 						style={{ display: "inline-flex", alignItems: "center", cursor: "pointer", textDecoration: "none" }}
 					>
-						<motion.div
-							animate={{ width: 290 }}
+						<div
 							style={{
+								width: 290,
 								height: 52,
 								overflow: "hidden",
 								display: "flex",
@@ -703,6 +690,18 @@ export default function About() {
 								boxShadow: "0 0 22px rgba(57,255,20,0.35), inset 0 0 18px rgba(57,255,20,0.07)",
 							}}
 						>
+							{/* Scan line in loop */}
+							<motion.div
+								animate={{ x: ["-100%", "400%"] }}
+								transition={{ duration: 1.8, ease: "linear", repeat: Infinity, repeatDelay: 1.2 }}
+								style={{
+									position: "absolute",
+									top: 0, bottom: 0,
+									width: "30%",
+									background: "linear-gradient(90deg, transparent, rgba(57,255,20,0.18), transparent)",
+									pointerEvents: "none",
+								}}
+							/>
 							<span style={{
 								minWidth: 56, display: "flex", alignItems: "center",
 								justifyContent: "center", color: "#39FF14", fontSize: 16,
@@ -715,7 +714,7 @@ export default function About() {
 							}}>
 								WATCH MY PROJECTS
 							</span>
-						</motion.div>
+						</div>
 					</motion.a>
 				</motion.div>
 
