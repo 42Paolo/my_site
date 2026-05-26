@@ -62,6 +62,11 @@ export default function Hero() {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const prefersReduced = useReducedMotion();
 	const [scrambling, setScrambling] = useState([false, false, false]);
+	const isMobileRef = useRef(false);
+
+	useEffect(() => {
+		isMobileRef.current = window.innerWidth < 1024;
+	}, []);
 
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
@@ -69,7 +74,7 @@ export default function Hero() {
 	});
 
 	useMotionValueEvent(scrollYProgress, "change", (v) => {
-		if (prefersReduced) return;
+		if (prefersReduced || isMobileRef.current) return;
 		setScrambling([
 			v > 0.38 && v < 0.65,
 			v > 0.22 && v < 0.50,
