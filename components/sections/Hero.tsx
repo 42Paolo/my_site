@@ -207,9 +207,9 @@ export default function Hero() {
 					<div className="max-w-[1440px] mx-auto w-full px-6 md:px-12 lg:px-16 pt-20 pb-8">
 
 						<motion.p
-							initial={isMobile ? false : { opacity: 0, x: -16 }}
-							animate={isMobile ? {} : { opacity: 1, x: 0 }}
-							transition={prefersReduced ? { duration: 0 } : { duration: 0.5, delay: 0.05 }}
+							initial={{ opacity: 0, x: -16 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.5, delay: 0.05 }}
 							className="flex items-center gap-3 font-display font-500 text-xs
 							           tracking-[0.22em] uppercase text-[var(--text-3)] mb-6"
 						>
@@ -225,9 +225,9 @@ export default function Hero() {
 							{lines.map((line, i) => (
 								<div key={i} className="pb-[0.06em]">
 									<motion.div
-										initial={isMobile ? false : { opacity: 0, y: 32 }}
-										animate={isMobile ? {} : { opacity: 1, y: 0 }}
-										transition={prefersReduced
+										initial={{ opacity: 0, y: 32 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={(prefersReduced || isMobile)
 											? { duration: 0 }
 											: { duration: 0.85, delay: 0.12 + i * 0.16, ease: [0.16, 1, 0.3, 1] }
 										}
@@ -256,9 +256,9 @@ export default function Hero() {
 						</div>
 
 						<motion.div
-							initial={isMobile ? false : { opacity: 0, y: 28 }}
-							animate={isMobile ? {} : { opacity: 1, y: 0 }}
-							transition={prefersReduced ? { duration: 0 } : { duration: 0.7, delay: 0.62 }}
+							initial={{ opacity: 0, y: 28 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.7, delay: 0.62 }}
 						>
 							<p
 								className="font-body text-base md:text-lg leading-relaxed max-w-md"
@@ -273,9 +273,9 @@ export default function Hero() {
 
 				{/* ── Scroll cue ── */}
 				<motion.button
-					initial={isMobile ? false : { opacity: 0 }}
-					animate={isMobile ? {} : { opacity: 1 }}
-					transition={prefersReduced ? { duration: 0 } : { delay: 1.5 }}
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={(prefersReduced || isMobile) ? { duration: 0 } : { delay: 1.5 }}
 					onClick={scrollDown}
 					aria-label="Scorri verso il basso"
 					className="absolute bottom-10 left-8 md:left-14 flex items-center gap-3 cursor-pointer group z-10"
