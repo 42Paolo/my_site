@@ -118,11 +118,11 @@ export default function Hero() {
 					style={{
 						left: "50%",
 						top: "50%",
-						width: "min(85vw, 400px)",
+						width: "min(78vw, 370px)",
 						zIndex: 1,
 						opacity: isMobile ? 0.35 : rocketOpacityMobile,
 						x: "-50%",
-						marginTop: "-44vh",
+						marginTop: "-52vh",
 					}}
 				>
 					<motion.div
