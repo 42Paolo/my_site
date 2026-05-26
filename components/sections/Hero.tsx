@@ -64,11 +64,15 @@ export default function Hero() {
 	const [scrambling, setScrambling] = useState([false, false, false]);
 	const isMobileRef = useRef(false);
 	const [isMobile, setIsMobile] = useState(false);
+	const [mobileVH, setMobileVH] = useState<number | null>(null);
 
 	useEffect(() => {
 		const mobile = window.innerWidth < 1024;
 		isMobileRef.current = mobile;
 		setIsMobile(mobile);
+		// Fix iOS Safari: 100vh changes when URL bar shows/hides causing layout jumps.
+		// Capture innerHeight once on mount and use px values on mobile.
+		if (mobile) setMobileVH(window.innerHeight);
 	}, []);
 
 	const { scrollYProgress } = useScroll({
@@ -107,10 +111,13 @@ export default function Hero() {
 		<section
 			ref={sectionRef}
 			className="relative bg-[var(--bg)]"
-			style={{ height: "195vh" }}
+			style={{ height: mobileVH ? `${mobileVH * 1.95}px` : "195vh" }}
 			aria-label="Hero"
 		>
-			<div className="sticky top-0 h-screen overflow-hidden">
+			<div
+				className="sticky top-0 h-screen overflow-hidden"
+				style={{ height: mobileVH ? `${mobileVH}px` : undefined }}
+			>
 
 				{/* ── Razzo — mobile (centered background) ── */}
 				<motion.div
