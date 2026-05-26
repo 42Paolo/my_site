@@ -121,7 +121,7 @@ export default function Hero() {
 						y: rocketYMobile,
 						opacity: rocketOpacityMobile,
 						x: "-50%",
-						marginTop: "-58%",
+						marginTop: "-92%",
 					}}
 				>
 					<motion.div

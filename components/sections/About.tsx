@@ -116,6 +116,11 @@ export default function About() {
 	const [screenIdx,         setScreenIdx]         = useState<number | null>(null);
 	const [corruptedLetters,  setCorruptedLetters]  = useState(0);
 	const [ctaHovered,        setCtaHovered]        = useState(false);
+	const [isMobile,          setIsMobile]          = useState(false);
+
+	useEffect(() => {
+		setIsMobile(window.innerWidth < 1024);
+	}, []);
 
 	const tmr            = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 	const itv            = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
@@ -338,20 +343,20 @@ export default function About() {
 				</div>
 
 				<div className="relative z-10 flex flex-col justify-center h-full">
-				<div ref={ref} className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 py-6 lg:py-16 w-full">
+				<div ref={ref} className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 py-2 lg:py-16 w-full">
 					{/* ── Badge ── */}
 					<motion.p
 						initial={{ opacity: 0, x: -20 }}
 						animate={inView ? { opacity: 1, x: 0 } : {}}
 						transition={{ duration: 0.5 }}
 						className="font-display font-500 text-xs tracking-[0.22em] uppercase
-						           text-[var(--text-3)] flex items-center gap-3 mb-6 lg:mb-16"
+						           text-[var(--text-3)] flex items-center gap-3 mb-4 lg:mb-16"
 					>
 						<span className="w-6 h-px bg-current" />
 						{t.about.badge}
 					</motion.p>
 
-					<div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-6 lg:gap-24 items-start">
+					<div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-3 lg:gap-24 items-start">
 
 						{/* ── Left — stats ── */}
 						<div className="flex flex-col gap-0">
@@ -363,12 +368,12 @@ export default function About() {
 										initial={{ opacity: 0, x: -90 }}
 										animate={inView ? { opacity: 1, x: 0 } : {}}
 										transition={{ duration: 0.8, delay: 0.05 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-										className={`flex flex-col py-4 lg:py-8 ${i < 2 ? "border-b border-[var(--border)]" : ""}`}
+										className={`flex flex-col py-2 lg:py-8 ${i < 2 ? "border-b border-[var(--border)]" : ""}`}
 									>
 										<span
 											className="font-700 leading-none block"
 											style={{
-												fontSize: "clamp(4rem, 9vw, 9rem)",
+												fontSize: "clamp(3rem, 9vw, 9rem)",
 												display: "inline-block",
 												fontFamily: isGlitching ? "'Bebas Neue', sans-serif" : "'Integral CF', var(--font-display), sans-serif",
 												letterSpacing: isGlitching ? "0.06em" : "-0.04em",
@@ -405,7 +410,7 @@ export default function About() {
 								initial={{ opacity: 0, x: 80 }}
 								animate={inView ? { opacity: 1, x: 0 } : {}}
 								transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-								className="font-700 leading-[0.94] tracking-[-0.03em] mb-4 lg:mb-10"
+								className="font-700 leading-[0.94] tracking-[-0.03em] mb-3 lg:mb-10"
 								style={{ fontSize: "clamp(2.2rem, 5vw, 4.5rem)", fontFamily: "'Integral CF', var(--font-display), sans-serif" }}
 							>
 								{titleParts[0]}
@@ -484,7 +489,7 @@ export default function About() {
 								initial={{ opacity: 0, x: 60 }}
 								animate={inView ? { opacity: 1, x: 0 } : {}}
 								transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-								className="font-body font-light leading-relaxed text-base md:text-lg mb-5"
+								className="font-body font-light leading-relaxed text-sm lg:text-lg mb-2 lg:mb-5"
 								style={{ color: "#E2E8F0" }}
 							>
 								{t.about.description}
@@ -494,7 +499,7 @@ export default function About() {
 								initial={{ opacity: 0, x: 60 }}
 								animate={inView ? { opacity: 1, x: 0 } : {}}
 								transition={{ duration: 0.7, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-								className="font-body font-light leading-relaxed text-base md:text-lg mb-12"
+								className="font-body font-light leading-relaxed text-sm lg:text-lg mb-4 lg:mb-12"
 								style={{ color: "#E2E8F0" }}
 							>
 								{t.about.description2}
@@ -513,7 +518,7 @@ export default function About() {
 									style={{ display: "inline-flex", alignItems: "center", cursor: "pointer", textDecoration: "none" }}
 								>
 									<motion.div
-										animate={{ width: ctaHovered ? 290 : 56 }}
+										animate={{ width: (isMobile || ctaHovered) ? 290 : 56 }}
 										transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
 										style={{
 											height: 52,
@@ -523,7 +528,7 @@ export default function About() {
 											position: "relative",
 											border: "1px solid #39FF14",
 											clipPath: "polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px)",
-											boxShadow: ctaHovered
+											boxShadow: (isMobile || ctaHovered)
 												? "0 0 22px rgba(57,255,20,0.35), inset 0 0 18px rgba(57,255,20,0.07)"
 												: "0 0 8px rgba(57,255,20,0.15)",
 											transition: "box-shadow 0.3s",
@@ -557,7 +562,7 @@ export default function About() {
 										}}>▶</span>
 										{/* Text */}
 										<motion.span
-											animate={{ opacity: ctaHovered ? 1 : 0, x: ctaHovered ? 0 : -16 }}
+											animate={{ opacity: (isMobile || ctaHovered) ? 1 : 0, x: (isMobile || ctaHovered) ? 0 : -16 }}
 											transition={{ duration: 0.25, delay: ctaHovered ? 0.18 : 0 }}
 											style={{
 												fontFamily: "'Integral CF', sans-serif",
