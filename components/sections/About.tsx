@@ -149,6 +149,7 @@ export default function About() {
 	const [screenIdx,         setScreenIdx]         = useState<number | null>(null);
 	const [corruptedLetters,  setCorruptedLetters]  = useState(0);
 	const [ctaHovered,        setCtaHovered]        = useState(false);
+	const [textExpanded,      setTextExpanded]      = useState(false);
 
 	const tmr            = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 	const itv            = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
@@ -522,15 +523,35 @@ export default function About() {
 								{t.about.description}
 							</motion.p>
 
-							<motion.p
-								initial={{ opacity: 0, x: 60 }}
-								animate={inView ? { opacity: 1, x: 0 } : {}}
-								transition={{ duration: 0.7, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-								className="font-body font-light leading-relaxed text-sm lg:text-lg mb-4 lg:mb-12"
-								style={{ color: "#E2E8F0" }}
-							>
-								{t.about.description2}
-							</motion.p>
+							{/* Second paragraph — always on desktop, expand on mobile */}
+							<AnimatePresence>
+								{(!isMobile || textExpanded) && (
+									<motion.p
+										key="desc2"
+										initial={isMobile ? { opacity: 0, height: 0, marginBottom: 0 } : { opacity: 0, x: 60 }}
+										animate={isMobile ? { opacity: 1, height: "auto", marginBottom: 16 } : inView ? { opacity: 1, x: 0 } : {}}
+										exit={isMobile ? { opacity: 0, height: 0, marginBottom: 0 } : {}}
+										transition={isMobile ? { duration: 0.35, ease: [0.16, 1, 0.3, 1] } : { duration: 0.7, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
+										className="font-body font-light leading-relaxed text-sm lg:text-lg lg:mb-12 overflow-hidden"
+										style={{ color: "#E2E8F0" }}
+									>
+										{t.about.description2}
+									</motion.p>
+								)}
+							</AnimatePresence>
+
+							{/* Expand button — mobile only */}
+							{isMobile && !textExpanded && (
+								<button
+									onClick={() => setTextExpanded(true)}
+									className="flex items-center gap-2 mb-4 font-display font-600 text-xs
+									           tracking-[0.2em] text-[var(--text-3)] hover:text-[var(--text-2)]
+									           transition-colors"
+								>
+									<span className="text-base leading-none tracking-[0.3em]">···</span>
+									<span>leggi di più</span>
+								</button>
+							)}
 
 							{/* ── Cyberpunk CTA ── */}
 							<motion.div
