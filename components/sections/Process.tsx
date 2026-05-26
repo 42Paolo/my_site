@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import { useLang } from "@/context/LanguageContext";
 import { useLenis } from "lenis/react";
 
@@ -12,6 +13,7 @@ export default function Process() {
   const lenis   = useLenis();
   const ref     = useRef<HTMLDivElement>(null);
   const inView  = useInView(ref, { once: true, margin: "-80px" });
+  const isMobile = useIsMobile();
   const [hovered, setHovered] = useState<number | null>(null);
 
   const scrollToContact = (e: React.MouseEvent) => {
@@ -28,8 +30,8 @@ export default function Process() {
         {/* ── Header row ── */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+          transition={isMobile ? { duration: 0 } : { duration: 0.6 }}
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-20 pb-10 border-b border-[var(--border)]"
         >
           <div>
@@ -66,8 +68,8 @@ export default function Process() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 36 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.1 + i * 0.13, ease: [0.16, 1, 0.3, 1] }}
+                animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+                transition={isMobile ? { duration: 0 } : { duration: 0.7, delay: 0.1 + i * 0.13, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
                 className="relative grid grid-cols-[auto_1fr] lg:grid-cols-[5rem_2fr_3fr_auto]
@@ -184,8 +186,8 @@ export default function Process() {
         {/* ── Typographic CTA ── */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.65 }}
+          animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+          transition={isMobile ? { duration: 0 } : { duration: 0.7, delay: 0.65 }}
           className="mt-28 lg:mt-36"
         >
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">

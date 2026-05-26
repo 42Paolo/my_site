@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import { ArrowUpRight } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 
@@ -12,6 +13,7 @@ export default function Services() {
   const { t }   = useLang();
   const ref     = useRef<HTMLDivElement>(null);
   const inView  = useInView(ref, { once: true, margin: "-80px" });
+  const isMobile = useIsMobile();
   const [active, setActive] = useState<number | null>(null);
 
   return (
@@ -22,8 +24,8 @@ export default function Services() {
         <div className="mb-16 md:mb-20">
           <motion.p
             initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5 }}
+            animate={(isMobile || inView) ? { opacity: 1, x: 0 } : {}}
+            transition={isMobile ? { duration: 0 } : { duration: 0.5 }}
             className="font-display font-500 text-xs tracking-[0.22em] uppercase
                        text-[var(--text-3)] flex items-center gap-3 mb-4"
           >
@@ -34,8 +36,8 @@ export default function Services() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.65, delay: 0.08 }}
+              animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+              transition={isMobile ? { duration: 0 } : { duration: 0.65, delay: 0.08 }}
               className="font-700 leading-[0.92] tracking-[-0.04em]"
               style={{ fontSize: "clamp(2.8rem, 7vw, 7.5rem)", fontFamily: "'Syne', sans-serif" }}
             >
@@ -45,8 +47,8 @@ export default function Services() {
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.55, delay: 0.18 }}
+              animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+              transition={isMobile ? { duration: 0 } : { duration: 0.55, delay: 0.18 }}
               className="font-body font-light text-[var(--text-2)] text-sm max-w-xs leading-relaxed
                          md:text-right shrink-0"
             >
@@ -68,8 +70,8 @@ export default function Services() {
                 aria-expanded={isOpen}
                 aria-label={service.title}
                 initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.55, delay: 0.25 + i * 0.08 }}
+                animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+                transition={isMobile ? { duration: 0 } : { duration: 0.55, delay: 0.25 + i * 0.08 }}
                 className="border-b border-[var(--border)] relative overflow-hidden cursor-default group"
                 onMouseEnter={() => setActive(i)}
                 onMouseLeave={() => setActive(null)}

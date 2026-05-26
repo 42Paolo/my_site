@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -23,6 +24,7 @@ export default function Contact() {
 	const { t } = useLang();
 	const ref = useRef<HTMLDivElement>(null);
 	const inView = useInView(ref, { once: true, margin: "-80px" });
+	const isMobile = useIsMobile();
 	const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
 	const {
@@ -71,8 +73,8 @@ export default function Contact() {
 				<div className="text-center mb-16">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
-						animate={inView ? { opacity: 1, y: 0 } : {}}
-						transition={{ duration: 0.5 }}
+						animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+						transition={isMobile ? { duration: 0 } : { duration: 0.5 }}
 						className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full
                        border border-solar/40 bg-solar/10 mb-5"
 					>
@@ -82,8 +84,8 @@ export default function Contact() {
 
 					<motion.h2
 						initial={{ opacity: 0, y: 20 }}
-						animate={inView ? { opacity: 1, y: 0 } : {}}
-						transition={{ duration: 0.55, delay: 0.1 }}
+						animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+						transition={isMobile ? { duration: 0 } : { duration: 0.55, delay: 0.1 }}
 						className="font-800 text-4xl md:text-5xl lg:text-6xl" style={{ fontFamily: "'Syne', sans-serif" }}
 					>
 						{t.contact.title}{" "}
@@ -92,8 +94,8 @@ export default function Contact() {
 
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}
-						animate={inView ? { opacity: 1, y: 0 } : {}}
-						transition={{ duration: 0.55, delay: 0.2 }}
+						animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
+						transition={isMobile ? { duration: 0 } : { duration: 0.55, delay: 0.2 }}
 						className="font-body font-light text-[var(--text-2)] text-lg max-w-xl mx-auto mt-4"
 					>
 						{t.contact.subtitle}
@@ -104,8 +106,8 @@ export default function Contact() {
 					{/* Info cards (left) */}
 					<motion.div
 						initial={{ opacity: 0, x: -30 }}
-						animate={inView ? { opacity: 1, x: 0 } : {}}
-						transition={{ duration: 0.6, delay: 0.2 }}
+						animate={(isMobile || inView) ? { opacity: 1, x: 0 } : {}}
+						transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.2 }}
 						className="lg:col-span-2 flex flex-col gap-5"
 					>
 						{[
@@ -153,8 +155,8 @@ export default function Contact() {
 					{/* Form (right) */}
 					<motion.div
 						initial={{ opacity: 0, x: 30 }}
-						animate={inView ? { opacity: 1, x: 0 } : {}}
-						transition={{ duration: 0.6, delay: 0.3 }}
+						animate={(isMobile || inView) ? { opacity: 1, x: 0 } : {}}
+						transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.3 }}
 						className="lg:col-span-3"
 					>
 						<div className="bg-[var(--surface)] border border-[var(--border)] rounded-3xl p-7 md:p-9">

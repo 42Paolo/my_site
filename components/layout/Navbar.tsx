@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
@@ -22,6 +22,8 @@ export default function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
 	const [hidden, setHidden] = useState(false);
 	const [mobileOpen, setMobileOpen] = useState(false);
+	const isMobileRef = useRef(false);
+	useEffect(() => { isMobileRef.current = window.innerWidth < 1024; }, []);
 
 	useEffect(() => {
 		let lastY = window.scrollY;
@@ -50,12 +52,14 @@ export default function Navbar() {
 	return (
 		<>
 			<motion.header
-				initial={{ y: -64, opacity: 0 }}
+				initial={isMobileRef.current ? false : { y: -64, opacity: 0 }}
 				animate={{ y: hidden ? "-100%" : 0, opacity: hidden ? 0.4 : 1 }}
 				transition={
-					hidden
-						? { duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94] }
-						: { duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }
+					isMobileRef.current
+						? { duration: 0 }
+						: hidden
+							? { duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94] }
+							: { duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }
 				}
 				className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${scrolled
 						? "bg-[var(--bg)]/90 backdrop-blur-xl border-b border-[var(--border)] shadow-lg shadow-solar/5"
