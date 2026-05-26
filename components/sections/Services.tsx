@@ -41,8 +41,8 @@ export default function Services() {
               className="font-700 leading-[0.92] tracking-[-0.04em]"
               style={{ fontSize: "clamp(2.8rem, 7vw, 7.5rem)", fontFamily: "'Syne', sans-serif" }}
             >
-              {t.services.title}{" "}
-              <span className="gradient-text">{t.services.titleAccent}</span>
+              <span className="block">{t.services.title}</span>
+              <span className="block gradient-text whitespace-nowrap">{t.services.titleAccent}</span>
             </motion.h2>
 
             <motion.p
