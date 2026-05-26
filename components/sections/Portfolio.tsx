@@ -178,39 +178,50 @@ export default function Portfolio() {
 					</motion.div>
 				)}
 
-				{/* CTA — full-width marquee band */}
+				{/* CTA — marquee band */}
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={(isMobile || inView) ? { opacity: 1 } : {}}
 					transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.6, delay: 0.7 }}
-					className="-mx-5 md:-mx-12 lg:-mx-16 mt-16 md:mt-24 relative overflow-hidden"
+					className="-mx-5 md:-mx-12 lg:-mx-16 mt-14 md:mt-20 relative overflow-hidden"
 				>
 					<motion.a
 						href="#contatto"
 						onHoverStart={() => setCtaHovered(true)}
 						onHoverEnd={() => setCtaHovered(false)}
-						className="block relative overflow-hidden cursor-pointer py-8 md:py-12"
+						className="block relative overflow-hidden cursor-pointer py-5 md:py-6"
 						aria-label={t.portfolio.allProjects}
 					>
-						{/* Hover fill — slides in from left */}
-						<motion.div
-							className="absolute inset-0 pointer-events-none"
-							animate={ctaHovered ? { scaleX: 1 } : { scaleX: 0 }}
-							style={{ transformOrigin: "left", background: "#FF781E" }}
-							transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-						/>
-
 						{/* Border top */}
 						<motion.div
-							className="absolute top-0 left-0 right-0 h-px pointer-events-none"
-							animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
+							className="absolute top-0 left-0 right-0 pointer-events-none"
+							animate={prefersReduced ? {} : {
+								backgroundColor: CYCLE_COLORS,
+								height: ctaHovered ? "2px" : "1px",
+							}}
 							transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
 						/>
 						{/* Border bottom */}
 						<motion.div
-							className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
-							animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
+							className="absolute bottom-0 left-0 right-0 pointer-events-none"
+							animate={prefersReduced ? {} : {
+								backgroundColor: CYCLE_COLORS,
+								height: ctaHovered ? "2px" : "1px",
+							}}
 							transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 2 }}
+						/>
+
+						{/* Hover spotlight — soft radial that follows */}
+						<motion.div
+							className="absolute inset-0 pointer-events-none"
+							animate={ctaHovered
+								? { opacity: 1 }
+								: { opacity: 0 }
+							}
+							transition={{ duration: 0.4 }}
+							style={{
+								background: "radial-gradient(ellipse 60% 100% at 50% 50%, rgba(255,120,30,0.08) 0%, transparent 70%)",
+							}}
 						/>
 
 						{/* Scrolling text */}
@@ -218,24 +229,28 @@ export default function Portfolio() {
 							<motion.div
 								className="flex items-center shrink-0"
 								animate={prefersReduced ? {} : { x: ["0%", "-50%"] }}
-								transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+								transition={{
+									duration: ctaHovered ? 12 : 22,
+									repeat: Infinity,
+									ease: "linear",
+								}}
 							>
 								{Array.from({ length: 6 }).map((_, i) => (
 									<Fragment key={i}>
 										<span
-											className="font-700 whitespace-nowrap px-8 md:px-14 transition-colors duration-300"
+											className="font-700 whitespace-nowrap px-6 md:px-10 transition-colors duration-400"
 											style={{
 												fontFamily: "'Syne', sans-serif",
-												fontSize: "clamp(2.6rem, 5.5vw, 5.5rem)",
-												letterSpacing: "-0.04em",
-												color: ctaHovered ? "white" : "var(--text)",
+												fontSize: "clamp(1.3rem, 2.2vw, 2rem)",
+												letterSpacing: "-0.02em",
+												color: ctaHovered ? "var(--text)" : "var(--text-2)",
 											}}
 										>
 											{t.portfolio.allProjects}
 										</span>
 										<motion.span
-											className="text-3xl md:text-5xl shrink-0 transition-colors duration-300"
-											style={{ color: ctaHovered ? "rgba(255,255,255,0.5)" : undefined }}
+											className="text-xs shrink-0 transition-colors duration-400"
+											style={{ color: ctaHovered ? "#FF781E" : undefined }}
 											animate={ctaHovered ? {} : (prefersReduced ? {} : { color: CYCLE_COLORS })}
 											transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
 										>
