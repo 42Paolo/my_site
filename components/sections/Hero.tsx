@@ -120,7 +120,7 @@ export default function Hero() {
 						top: "50%",
 						width: "min(85vw, 400px)",
 						zIndex: 1,
-						opacity: rocketOpacityMobile,
+						opacity: isMobile ? 0.35 : rocketOpacityMobile,
 						x: "-50%",
 						marginTop: "-44vh",
 					}}
@@ -278,7 +278,7 @@ export default function Hero() {
 					transition={(prefersReduced || isMobile) ? { duration: 0 } : { delay: 1.5 }}
 					onClick={scrollDown}
 					aria-label="Scorri verso il basso"
-					className="absolute bottom-10 left-8 md:left-14 flex items-center gap-3 cursor-pointer group z-10"
+					className="hidden lg:flex absolute bottom-10 left-8 md:left-14 items-center gap-3 cursor-pointer group z-10"
 					style={{ opacity: cueOpacity, color: "var(--text-3)" }}
 				>
 					<motion.div
