@@ -178,89 +178,108 @@ export default function Portfolio() {
 					</motion.div>
 				)}
 
-				{/* CTA — marquee band */}
+				{/* CTA — signal beacon */}
 				<motion.div
-					initial={{ opacity: 0 }}
-					animate={(isMobile || inView) ? { opacity: 1 } : {}}
+					initial={{ opacity: 0, y: 20 }}
+					animate={(isMobile || inView) ? { opacity: 1, y: 0 } : {}}
 					transition={(prefersReduced || isMobile) ? { duration: 0 } : { duration: 0.6, delay: 0.7 }}
-					className="-mx-5 md:-mx-12 lg:-mx-16 mt-14 md:mt-20 relative overflow-hidden"
+					className="flex justify-center mt-16 md:mt-20"
 				>
-					<motion.a
-						href="#contatto"
-						onHoverStart={() => setCtaHovered(true)}
-						onHoverEnd={() => setCtaHovered(false)}
-						className="block relative overflow-hidden cursor-pointer py-5 md:py-6"
-						aria-label={t.portfolio.allProjects}
-					>
-						{/* Border top */}
-						<motion.div
-							className="absolute top-0 left-0 right-0 pointer-events-none"
-							animate={prefersReduced ? {} : {
-								backgroundColor: CYCLE_COLORS,
-								height: ctaHovered ? "2px" : "1px",
-							}}
-							transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-						/>
-						{/* Border bottom */}
-						<motion.div
-							className="absolute bottom-0 left-0 right-0 pointer-events-none"
-							animate={prefersReduced ? {} : {
-								backgroundColor: CYCLE_COLORS,
-								height: ctaHovered ? "2px" : "1px",
-							}}
-							transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 2 }}
-						/>
+					<div style={{ position: "relative", display: "inline-block" }}>
 
-						{/* Hover spotlight — soft radial that follows */}
-						<motion.div
-							className="absolute inset-0 pointer-events-none"
-							animate={ctaHovered
-								? { opacity: 1 }
-								: { opacity: 0 }
-							}
-							transition={{ duration: 0.4 }}
-							style={{
-								background: "radial-gradient(ellipse 60% 100% at 50% 50%, rgba(255,120,30,0.08) 0%, transparent 70%)",
-							}}
-						/>
-
-						{/* Scrolling text */}
-						<div className="flex overflow-hidden relative z-10" aria-hidden="true">
-							<motion.div
-								className="flex items-center shrink-0"
-								animate={prefersReduced ? {} : { x: ["0%", "-50%"] }}
-								transition={{
-									duration: ctaHovered ? 12 : 22,
-									repeat: Infinity,
-									ease: "linear",
-								}}
-							>
-								{Array.from({ length: 6 }).map((_, i) => (
-									<Fragment key={i}>
-										<span
-											className="font-700 whitespace-nowrap px-6 md:px-10 transition-colors duration-400"
-											style={{
-												fontFamily: "'Syne', sans-serif",
-												fontSize: "clamp(1.3rem, 2.2vw, 2rem)",
-												letterSpacing: "-0.02em",
-												color: ctaHovered ? "var(--text)" : "var(--text-2)",
-											}}
-										>
-											{t.portfolio.allProjects}
-										</span>
-										<motion.span
-											className="text-xs shrink-0 transition-colors duration-400"
-											style={{ color: ctaHovered ? "#FF781E" : undefined }}
-											animate={ctaHovered ? {} : (prefersReduced ? {} : { color: CYCLE_COLORS })}
-											transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-										>
-											✦
-										</motion.span>
-									</Fragment>
-								))}
-							</motion.div>
+						{/* Corner targeting reticles */}
+						{/* TL */}
+						<div style={{ position: "absolute", top: -10, left: -10, width: 14, height: 14, pointerEvents: "none" }}>
+							<motion.div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
+							<motion.div style={{ position: "absolute", top: 0, left: 0, bottom: 0, width: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
 						</div>
-					</motion.a>
+						{/* TR */}
+						<div style={{ position: "absolute", top: -10, right: -10, width: 14, height: 14, pointerEvents: "none" }}>
+							<motion.div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
+							<motion.div style={{ position: "absolute", top: 0, right: 0, bottom: 0, width: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
+						</div>
+						{/* BL */}
+						<div style={{ position: "absolute", bottom: -10, left: -10, width: 14, height: 14, pointerEvents: "none" }}>
+							<motion.div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
+							<motion.div style={{ position: "absolute", top: 0, left: 0, bottom: 0, width: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
+						</div>
+						{/* BR */}
+						<div style={{ position: "absolute", bottom: -10, right: -10, width: 14, height: 14, pointerEvents: "none" }}>
+							<motion.div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
+							<motion.div style={{ position: "absolute", top: 0, right: 0, bottom: 0, width: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
+						</div>
+
+						{/* Border shell — cycling color = 1.5px border */}
+						<motion.div
+							animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
+							transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+							style={{ padding: "1.5px", clipPath: "polygon(0% 0%, calc(100% - 24px) 0%, 100% 24px, 100% 100%, 24px 100%, 0% calc(100% - 24px))", display: "inline-flex" }}
+						>
+							<motion.a
+								href="#contatto"
+								onHoverStart={() => setCtaHovered(true)}
+								onHoverEnd={() => setCtaHovered(false)}
+								animate={{
+									boxShadow: ctaHovered
+										? "0 0 48px rgba(255,120,30,0.45), inset 0 0 32px rgba(255,120,30,0.08)"
+										: "0 0 18px rgba(255,120,30,0.18), inset 0 0 14px rgba(255,120,30,0.04)",
+								}}
+								transition={{ duration: 0.35 }}
+								style={{ width: 380, height: 64, overflow: "hidden", display: "flex", alignItems: "center", position: "relative", background: "var(--bg-2)", textDecoration: "none", cursor: "pointer" }}
+							>
+								{/* Triple scan lines */}
+								{!prefersReduced && [0, 0.4, 0.8].map((delay, i) => (
+									<motion.div key={i}
+										animate={{ x: ["-100%", "620%"] }}
+										transition={{ duration: 1.7, ease: "linear", repeat: Infinity, repeatDelay: 1.9, delay }}
+										style={{ position: "absolute", height: 1, width: "20%", top: `${18 + i * 26}%`, background: "linear-gradient(90deg, transparent, rgba(255,120,30,0.22), transparent)", pointerEvents: "none" }}
+									/>
+								))}
+
+								{/* Icon zone */}
+								<div style={{ minWidth: 66, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, position: "relative" }}>
+									<motion.div
+										animate={prefersReduced ? {} : { scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}
+										transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+										style={{ position: "absolute", width: 26, height: 26, borderRadius: "50%", border: "1px solid #FF781E", pointerEvents: "none" }}
+									/>
+									<motion.span
+										animate={prefersReduced ? {} : { color: CYCLE_COLORS }}
+										transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+										style={{ fontSize: 15, fontFamily: "monospace", position: "relative", zIndex: 1 }}
+									>▶</motion.span>
+								</div>
+
+								{/* Separator */}
+								<motion.div
+									animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
+									transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+									style={{ width: 1, height: 30, flexShrink: 0, opacity: 0.35 }}
+								/>
+
+								{/* Text */}
+								<span style={{ fontFamily: "'Integral CF', sans-serif", fontSize: 10.5, letterSpacing: "0.22em", color: "rgba(255,255,255,0.88)", whiteSpace: "nowrap", paddingLeft: 18, paddingRight: 22, flex: 1 }}>
+									{t.portfolio.allProjects.toUpperCase()}
+								</span>
+
+								{/* Status dot */}
+								<motion.div
+									animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS, opacity: [1, 0.25, 1] }}
+									transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+									style={{ position: "absolute", top: 10, right: 13, width: 5, height: 5, borderRadius: "50%" }}
+								/>
+							</motion.a>
+						</motion.div>
+
+						{/* HUD label */}
+						<motion.div
+							animate={prefersReduced ? {} : { color: CYCLE_COLORS }}
+							transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+							style={{ fontFamily: "monospace", fontSize: 8, letterSpacing: "0.18em", marginTop: 7, opacity: 0.22, textAlign: "center" }}
+						>
+							PABROGI.COM · FIRENZE
+						</motion.div>
+					</div>
 				</motion.div>
 			</div>
 		</section>

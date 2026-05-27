@@ -575,123 +575,38 @@ export default function About() {
 								transition={{ duration: 0.7, delay: 0.36, ease: [0.16, 1, 0.3, 1] }}
 								className="hidden lg:flex justify-start"
 							>
-								{/* Signal beacon wrapper with corner reticles */}
-								<div style={{ position: "relative", display: "inline-block" }}>
-
-									{/* Corner targeting reticles */}
-									{/* TL */}
-									<div style={{ position: "absolute", top: -10, left: -10, width: 14, height: 14, pointerEvents: "none" }}>
-										<motion.div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
-										<motion.div style={{ position: "absolute", top: 0, left: 0, bottom: 0, width: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
-									</div>
-									{/* TR */}
-									<div style={{ position: "absolute", top: -10, right: -10, width: 14, height: 14, pointerEvents: "none" }}>
-										<motion.div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
-										<motion.div style={{ position: "absolute", top: 0, right: 0, bottom: 0, width: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
-									</div>
-									{/* BL */}
-									<div style={{ position: "absolute", bottom: -10, left: -10, width: 14, height: 14, pointerEvents: "none" }}>
-										<motion.div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
-										<motion.div style={{ position: "absolute", top: 0, left: 0, bottom: 0, width: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
-									</div>
-									{/* BR */}
-									<div style={{ position: "absolute", bottom: -10, right: -10, width: 14, height: 14, pointerEvents: "none" }}>
-										<motion.div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
-										<motion.div style={{ position: "absolute", top: 0, right: 0, bottom: 0, width: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
-									</div>
-
-									{/* Border shell — cycling background creates the 1.5px border */}
-									<motion.div
-										animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
-										transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+								<motion.a
+									href="#portfolio"
+									style={{ display: "inline-flex", alignItems: "center", cursor: "pointer", textDecoration: "none" }}
+								>
+									<div
 										style={{
-											padding: "1.5px",
-											clipPath: "polygon(0% 0%, calc(100% - 24px) 0%, 100% 24px, 100% 100%, 24px 100%, 0% calc(100% - 24px))",
-											display: "inline-flex",
+											width: 290,
+											height: 52,
+											overflow: "hidden",
+											display: "flex",
+											alignItems: "center",
+											position: "relative",
+											border: "1px solid #39FF14",
+											clipPath: "polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px)",
+											boxShadow: "0 0 22px rgba(57,255,20,0.35), inset 0 0 18px rgba(57,255,20,0.07)",
 										}}
 									>
-										<motion.a
-											href="#portfolio"
-											onHoverStart={() => setCtaHovered(true)}
-											onHoverEnd={() => setCtaHovered(false)}
-											animate={{
-												boxShadow: ctaHovered
-													? "0 0 48px rgba(255,120,30,0.45), inset 0 0 32px rgba(255,120,30,0.08)"
-													: "0 0 18px rgba(255,120,30,0.18), inset 0 0 14px rgba(255,120,30,0.04)",
-											}}
-											transition={{ duration: 0.35 }}
+										<motion.div
+											animate={{ x: ["-100%", "400%"] }}
+											transition={{ duration: 1.8, ease: "linear", repeat: Infinity, repeatDelay: 1.2 }}
 											style={{
-												width: 410, height: 64,
-												overflow: "hidden", display: "flex",
-												alignItems: "center", position: "relative",
-												background: "#06060A",
-												textDecoration: "none", cursor: "pointer",
+												position: "absolute", top: 0, bottom: 0, width: "30%",
+												background: "linear-gradient(90deg, transparent, rgba(57,255,20,0.18), transparent)",
+												pointerEvents: "none",
 											}}
-										>
-											{/* Triple scan lines */}
-											{!prefersReduced && [0, 0.4, 0.8].map((delay, i) => (
-												<motion.div key={i}
-													animate={{ x: ["-100%", "620%"] }}
-													transition={{ duration: 1.7, ease: "linear", repeat: Infinity, repeatDelay: 1.9, delay }}
-													style={{
-														position: "absolute", height: 1, width: "20%",
-														top: `${18 + i * 26}%`,
-														background: "linear-gradient(90deg, transparent, rgba(255,120,30,0.22), transparent)",
-														pointerEvents: "none",
-													}}
-												/>
-											))}
-
-											{/* Play icon zone */}
-											<div style={{ minWidth: 66, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, position: "relative" }}>
-												{/* Pulsing ring */}
-												<motion.div
-													animate={prefersReduced ? {} : { scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}
-													transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-													style={{ position: "absolute", width: 26, height: 26, borderRadius: "50%", border: "1px solid #FF781E", pointerEvents: "none" }}
-												/>
-												<motion.span
-													animate={prefersReduced ? {} : { color: CYCLE_COLORS }}
-													transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-													style={{ fontSize: 15, fontFamily: "monospace", position: "relative", zIndex: 1 }}
-												>▶</motion.span>
-											</div>
-
-											{/* Separator */}
-											<motion.div
-												animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
-												transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-												style={{ width: 1, height: 30, flexShrink: 0, opacity: 0.35 }}
-											/>
-
-											{/* Text */}
-											<span style={{
-												fontFamily: "'Integral CF', sans-serif",
-												fontSize: 10.5, letterSpacing: "0.22em",
-												color: "rgba(255,255,255,0.88)",
-												whiteSpace: "nowrap", paddingLeft: 18, paddingRight: 22, flex: 1,
-											}}>
-												WATCH MY PROJECTS
-											</span>
-
-											{/* Status dot */}
-											<motion.div
-												animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS, opacity: [1, 0.25, 1] }}
-												transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-												style={{ position: "absolute", top: 10, right: 13, width: 5, height: 5, borderRadius: "50%" }}
-											/>
-										</motion.a>
-									</motion.div>
-
-									{/* HUD coordinates */}
-									<motion.div
-										animate={prefersReduced ? {} : { color: CYCLE_COLORS }}
-										transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-										style={{ fontFamily: "monospace", fontSize: 8, letterSpacing: "0.18em", marginTop: 7, paddingLeft: 3, opacity: 0.22 }}
-									>
-										43.7731°N 11.2560°E · FI-IT
-									</motion.div>
-								</div>
+										/>
+										<span style={{ minWidth: 56, display: "flex", alignItems: "center", justifyContent: "center", color: "#39FF14", fontSize: 16, fontFamily: "monospace", flexShrink: 0 }}>▶</span>
+										<span style={{ fontFamily: "'Integral CF', sans-serif", fontSize: 11, letterSpacing: "0.2em", color: "#39FF14", whiteSpace: "nowrap", paddingRight: 20 }}>
+											WATCH MY PROJECTS
+										</span>
+									</div>
+								</motion.a>
 							</motion.div>
 						</div>
 					</div>
@@ -737,90 +652,34 @@ export default function About() {
 					transition={{ duration: 0.7, delay: 0.5 }}
 					className="lg:hidden flex items-center justify-center pb-8"
 				>
-									<div style={{ position: "relative", display: "inline-block" }}>
-						{/* Border shell */}
-						<motion.div
-							animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
-							transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+									<motion.a
+						href="#portfolio"
+						style={{ display: "inline-flex", alignItems: "center", cursor: "pointer", textDecoration: "none" }}
+					>
+						<div
 							style={{
-								padding: "1.5px",
-								clipPath: "polygon(0% 0%, calc(100% - 20px) 0%, 100% 20px, 100% 100%, 20px 100%, 0% calc(100% - 20px))",
-								display: "inline-flex",
+								width: 290, height: 52,
+								overflow: "hidden", display: "flex", alignItems: "center", position: "relative",
+								border: "1px solid #39FF14",
+								clipPath: "polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px)",
+								boxShadow: "0 0 22px rgba(57,255,20,0.35), inset 0 0 18px rgba(57,255,20,0.07)",
 							}}
 						>
-							<a
-								href="#portfolio"
+							<motion.div
+								animate={{ x: ["-100%", "400%"] }}
+								transition={{ duration: 1.8, ease: "linear", repeat: Infinity, repeatDelay: 1.2 }}
 								style={{
-									width: 310, height: 56,
-									overflow: "hidden", display: "flex",
-									alignItems: "center", position: "relative",
-									background: "#06060A",
-									textDecoration: "none", cursor: "pointer",
+									position: "absolute", top: 0, bottom: 0, width: "30%",
+									background: "linear-gradient(90deg, transparent, rgba(57,255,20,0.18), transparent)",
+									pointerEvents: "none",
 								}}
-							>
-								{/* Scan lines */}
-								{!prefersReduced && [0, 0.45].map((delay, i) => (
-									<motion.div key={i}
-										animate={{ x: ["-100%", "620%"] }}
-										transition={{ duration: 1.8, ease: "linear", repeat: Infinity, repeatDelay: 1.8, delay }}
-										style={{
-											position: "absolute", height: 1, width: "22%",
-											top: `${28 + i * 30}%`,
-											background: "linear-gradient(90deg, transparent, rgba(255,120,30,0.2), transparent)",
-											pointerEvents: "none",
-										}}
-									/>
-								))}
-
-								{/* Play icon */}
-								<div style={{ minWidth: 60, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, position: "relative" }}>
-									<motion.div
-										animate={prefersReduced ? {} : { scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}
-										transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-										style={{ position: "absolute", width: 24, height: 24, borderRadius: "50%", border: "1px solid #FF781E", pointerEvents: "none" }}
-									/>
-									<motion.span
-										animate={prefersReduced ? {} : { color: CYCLE_COLORS }}
-										transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-										style={{ fontSize: 13, fontFamily: "monospace", position: "relative", zIndex: 1 }}
-									>▶</motion.span>
-								</div>
-
-								{/* Separator */}
-								<motion.div
-									animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
-									transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-									style={{ width: 1, height: 26, flexShrink: 0, opacity: 0.35 }}
-								/>
-
-								{/* Text */}
-								<span style={{
-									fontFamily: "'Integral CF', sans-serif",
-									fontSize: 10, letterSpacing: "0.2em",
-									color: "rgba(255,255,255,0.88)",
-									whiteSpace: "nowrap", paddingLeft: 16, paddingRight: 18,
-								}}>
-									WATCH MY PROJECTS
-								</span>
-
-								{/* Status dot */}
-								<motion.div
-									animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS, opacity: [1, 0.25, 1] }}
-									transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-									style={{ position: "absolute", top: 9, right: 11, width: 4, height: 4, borderRadius: "50%" }}
-								/>
-							</a>
-						</motion.div>
-
-						{/* HUD label */}
-						<motion.div
-							animate={prefersReduced ? {} : { color: CYCLE_COLORS }}
-							transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-							style={{ fontFamily: "monospace", fontSize: 7, letterSpacing: "0.15em", marginTop: 6, opacity: 0.22, textAlign: "center" }}
-						>
-							FI-IT · PABROGI.COM
-						</motion.div>
-					</div>
+							/>
+							<span style={{ minWidth: 56, display: "flex", alignItems: "center", justifyContent: "center", color: "#39FF14", fontSize: 16, fontFamily: "monospace", flexShrink: 0 }}>▶</span>
+							<span style={{ fontFamily: "'Integral CF', sans-serif", fontSize: 11, letterSpacing: "0.2em", color: "#39FF14", whiteSpace: "nowrap", paddingRight: 20 }}>
+								WATCH MY PROJECTS
+							</span>
+						</div>
+					</motion.a>
 				</motion.div>
 
 				</div> {/* flex wrapper */}
