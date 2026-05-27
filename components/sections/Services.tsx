@@ -84,7 +84,7 @@ export default function Services() {
                   style={{
                     background: `${color}09`,
                     opacity: isOpen ? 1 : 0,
-                    transition: "opacity 0.3s",
+                    transition: "opacity 0.12s",
                   }}
                 />
                 {/* Left accent bar */}
@@ -92,7 +92,7 @@ export default function Services() {
                   className="absolute left-0 top-0 bottom-0 w-[3px] pointer-events-none"
                   animate={{ scaleY: isOpen ? 1 : 0, opacity: isOpen ? 1 : 0 }}
                   style={{ background: color, transformOrigin: "top" }}
-                  transition={{ duration: 0.35 }}
+                  transition={{ duration: 0.15 }}
                 />
 
                 {/* Main row */}
@@ -101,7 +101,7 @@ export default function Services() {
                   <motion.span
                     className="font-700 text-3xl md:text-5xl w-14 md:w-20 shrink-0 tabular-nums" style={{ fontFamily: "'Integral CF', sans-serif" }}
                     animate={{ color: isOpen ? color : "var(--text-3)" }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.12 }}
                   >
                     {NUMS[i]}
                   </motion.span>
@@ -120,7 +120,7 @@ export default function Services() {
                             initial={{ opacity: 0, height: 0, marginTop: 0 }}
                             animate={{ opacity: 1, height: "auto", marginTop: 8 }}
                             exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
                             className="font-body text-sm text-[var(--text-2)] leading-relaxed max-w-xl overflow-hidden"
                           >
                             {service.description}
@@ -143,11 +143,11 @@ export default function Services() {
                       backgroundColor: isOpen ? `${color}12` : "transparent",
                       x: isOpen ? 4 : 0,
                     }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.15 }}
                   >
                     <motion.div
                       animate={{ rotate: isOpen ? 45 : 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.15 }}
                     >
                       <ArrowUpRight
                         size={16}
