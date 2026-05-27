@@ -209,11 +209,11 @@ export default function Portfolio() {
 							<motion.div style={{ position: "absolute", top: 0, right: 0, bottom: 0, width: 1 }} animate={prefersReduced ? {} : { background: CYCLE_COLORS }} transition={{ duration: 5, repeat: Infinity, ease: "linear" }} />
 						</div>
 
-						{/* Border shell — cycling color = 1.5px border */}
+						{/* Border shell — cycling color = 2px border */}
 						<motion.div
 							animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
 							transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-							style={{ padding: "1.5px", clipPath: "polygon(0% 0%, calc(100% - 24px) 0%, 100% 24px, 100% 100%, 24px 100%, 0% calc(100% - 24px))", display: "inline-flex" }}
+							style={{ padding: "2px", clipPath: "polygon(0% 0%, calc(100% - 28px) 0%, 100% 28px, 100% 100%, 28px 100%, 0% calc(100% - 28px))", display: "inline-flex" }}
 						>
 							<motion.a
 								href="#contatto"
@@ -221,11 +221,11 @@ export default function Portfolio() {
 								onHoverEnd={() => setCtaHovered(false)}
 								animate={{
 									boxShadow: ctaHovered
-										? "0 0 48px rgba(255,120,30,0.45), inset 0 0 32px rgba(255,120,30,0.08)"
-										: "0 0 18px rgba(255,120,30,0.18), inset 0 0 14px rgba(255,120,30,0.04)",
+										? "0 0 60px rgba(255,120,30,0.6), inset 0 0 40px rgba(255,120,30,0.1)"
+										: "0 0 32px rgba(255,120,30,0.35), inset 0 0 20px rgba(255,120,30,0.06)",
 								}}
 								transition={{ duration: 0.35 }}
-								style={{ width: 380, height: 64, overflow: "hidden", display: "flex", alignItems: "center", position: "relative", background: "var(--bg-2)", textDecoration: "none", cursor: "pointer" }}
+								style={{ width: 520, height: 72, overflow: "hidden", display: "flex", alignItems: "center", position: "relative", background: "#080810", textDecoration: "none", cursor: "pointer" }}
 							>
 								{/* Triple scan lines */}
 								{!prefersReduced && [0, 0.4, 0.8].map((delay, i) => (
@@ -237,16 +237,16 @@ export default function Portfolio() {
 								))}
 
 								{/* Icon zone */}
-								<div style={{ minWidth: 66, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, position: "relative" }}>
+								<div style={{ minWidth: 76, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, position: "relative" }}>
 									<motion.div
-										animate={prefersReduced ? {} : { scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}
+										animate={prefersReduced ? {} : { scale: [1, 1.7, 1], opacity: [0.7, 0, 0.7] }}
 										transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-										style={{ position: "absolute", width: 26, height: 26, borderRadius: "50%", border: "1px solid #FF781E", pointerEvents: "none" }}
+										style={{ position: "absolute", width: 32, height: 32, borderRadius: "50%", border: "1px solid #FF781E", pointerEvents: "none" }}
 									/>
 									<motion.span
 										animate={prefersReduced ? {} : { color: CYCLE_COLORS }}
 										transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-										style={{ fontSize: 15, fontFamily: "monospace", position: "relative", zIndex: 1 }}
+										style={{ fontSize: 18, fontFamily: "monospace", position: "relative", zIndex: 1 }}
 									>▶</motion.span>
 								</div>
 
@@ -254,11 +254,11 @@ export default function Portfolio() {
 								<motion.div
 									animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
 									transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-									style={{ width: 1, height: 30, flexShrink: 0, opacity: 0.35 }}
+									style={{ width: 1, height: 34, flexShrink: 0, opacity: 0.4 }}
 								/>
 
 								{/* Text */}
-								<span style={{ fontFamily: "'Integral CF', sans-serif", fontSize: 10.5, letterSpacing: "0.22em", color: "rgba(255,255,255,0.88)", whiteSpace: "nowrap", paddingLeft: 18, paddingRight: 22, flex: 1 }}>
+								<span style={{ fontFamily: "'Integral CF', sans-serif", fontSize: 12, letterSpacing: "0.24em", color: "rgba(255,255,255,0.92)", whiteSpace: "nowrap", paddingLeft: 22, paddingRight: 28, flex: 1 }}>
 									{t.portfolio.allProjects.toUpperCase()}
 								</span>
 
