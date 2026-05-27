@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef, useState, Fragment } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useInView, useReducedMotion, AnimatePresence } from "framer-motion";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 import Image from "next/image";
 

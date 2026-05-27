@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import { motion, useInView, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, useInView, AnimatePresence, useScroll, useMotionValueEvent, useReducedMotion } from "framer-motion";
 import { useLang } from "@/context/LanguageContext";
 import Image from "next/image";
 
@@ -79,6 +79,7 @@ function mixWord(from: string, to: string, t: number) {
 export default function About() {
 	const { t }  = useLang();
 	const ref    = useRef<HTMLDivElement>(null);
+	const prefersReduced = useReducedMotion();
 	const sectionRef = useRef<HTMLElement>(null);
 	const inView        = useInView(ref, { once: true, margin: "-100px" });
 	const inViewForGlitch = useInView(ref, { once: true, amount: 0.6 });
