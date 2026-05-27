@@ -138,9 +138,10 @@ export default function Process() {
 
                 {/* Title (desktop) */}
                 <h3
-                  className="hidden lg:block font-display font-700 leading-none tracking-[-0.03em]
+                  className="hidden lg:block font-700 leading-none tracking-[-0.03em]
                              text-[var(--text)] relative z-10 transition-colors duration-300"
                   style={{
+                    fontFamily: "'Syne', sans-serif",
                     fontSize: "clamp(1.8rem, 4vw, 3.2rem)",
                     color: isHov ? color : undefined,
                   }}
