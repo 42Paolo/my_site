@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
 
 		await transporter.sendMail({
 			from:    `"pabrogi.com" <${process.env.GMAIL_USER}>`,
-			to:      "paolotttbrogi@gmail.com",
+			to:      "pabrogi@gmail.com",
 			replyTo: sEmail,
 			subject: `🚀 Nuovo progetto da ${sName}`,
 			html: `
