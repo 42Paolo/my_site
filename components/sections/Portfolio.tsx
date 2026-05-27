@@ -225,7 +225,7 @@ export default function Portfolio() {
 										: "0 0 32px rgba(255,120,30,0.35), inset 0 0 20px rgba(255,120,30,0.06)",
 								}}
 								transition={{ duration: 0.35 }}
-								style={{ width: 520, height: 72, overflow: "hidden", display: "flex", alignItems: "center", position: "relative", background: "#080810", textDecoration: "none", cursor: "pointer" }}
+								style={{ height: 72, overflow: "hidden", display: "flex", alignItems: "center", position: "relative", background: "#080810", textDecoration: "none", cursor: "pointer", padding: "0 36px" }}
 							>
 								{/* Triple scan lines */}
 								{!prefersReduced && [0, 0.4, 0.8].map((delay, i) => (
@@ -236,29 +236,8 @@ export default function Portfolio() {
 									/>
 								))}
 
-								{/* Icon zone */}
-								<div style={{ minWidth: 76, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, position: "relative" }}>
-									<motion.div
-										animate={prefersReduced ? {} : { scale: [1, 1.7, 1], opacity: [0.7, 0, 0.7] }}
-										transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-										style={{ position: "absolute", width: 32, height: 32, borderRadius: "50%", border: "1px solid #FF781E", pointerEvents: "none" }}
-									/>
-									<motion.span
-										animate={prefersReduced ? {} : { color: CYCLE_COLORS }}
-										transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-										style={{ fontSize: 18, fontFamily: "monospace", position: "relative", zIndex: 1 }}
-									>▶</motion.span>
-								</div>
-
-								{/* Separator */}
-								<motion.div
-									animate={prefersReduced ? {} : { backgroundColor: CYCLE_COLORS }}
-									transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-									style={{ width: 1, height: 34, flexShrink: 0, opacity: 0.4 }}
-								/>
-
 								{/* Text */}
-								<span style={{ fontFamily: "'Integral CF', sans-serif", fontSize: 12, letterSpacing: "0.24em", color: "rgba(255,255,255,0.92)", whiteSpace: "nowrap", paddingLeft: 22, paddingRight: 28, flex: 1 }}>
+								<span style={{ fontFamily: "'Integral CF', sans-serif", fontSize: 12, letterSpacing: "0.24em", color: "rgba(255,255,255,0.92)", whiteSpace: "nowrap" }}>
 									{t.portfolio.allProjects.toUpperCase()}
 								</span>
 
